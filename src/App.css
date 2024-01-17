@@ -1,0 +1,84 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+
+.active{
+    background-color: indigo;
+    
+}
+
+  body {
+    font-size: 12px; 
+    overflow-x: hidden;
+  }
+  
+ 
+  input, p, tr, th, td, button, select{
+    font-size: 1.3em !important; 
+    
+  }
+
+  input{
+    width: 200px;
+  }
+
+  .signup-input{
+    width: unset !important;
+
+  }
+
+
+   .select-font {
+    font-size: 1.7em !important;
+    appearance: none; /* This can help in removing default styles in some browsers */
+    padding: 0.5em; /* Adjust padding as needed */
+    margin: 0; /* Remove default margin */
+    border: 1px solid #ccc; /* Add border if needed */
+    border-radius: 4px; /* Add border-radius if needed */
+    outline: none; /* Remove default outline style */
+    box-sizing: border-box; /* Ensure proper sizing */
+    width: 200px !important;  
+    background-color: grey;
+  }
+
+    .label-font{
+        font-size: 1.7em !important;
+    }
+
+  /* input{
+    width: 150px;
+  } */
+
+  .sticky-thead{
+    position: sticky;
+    top: 0;
+    background-color: #f8f9fa; /* Adjust the background color as needed */
+    z-index: 3;
+  }
+
+  .sticky-col {
+    position: sticky;
+    left: 0;
+    z-index: 2;
+    @apply bg-gray-900 bg-opacity-95
+}
+
+
+  .table-container {
+    height: 700px; /* Set a specific height for the container */
+    width: 1800px;
+    overflow-y: auto; /* Allow vertical scrolling */
+    overflow-x: auto;
+  }
+
+
+  .actual-head th:nth-child(even) {
+    background-color: #000000; /* Set the background color for even elements */
+  }
+  
+.color th:nth-child(n+7):nth-child(-n+11),
+.color th:nth-child(n+17):nth-child(-n+20) {
+  background-color: #000000; /* Set the background color for the specified range */
+}
