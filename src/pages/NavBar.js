@@ -42,7 +42,7 @@ const NavBar = (props) => {
         { user!=="Committee" && <NavLink to="/faculty"><button className='rounded-md  px-3.5 py-1.5 text-sm font-semibold leading-7 text-white'>Faculty</button>  </NavLink>}
 
 
-        <NavLink to="/sabbatical"><button className='rounded-md  px-3.5 py-1.5 text-sm font-semibold leading-7 text-white'>Leave of Absence</button></NavLink>
+        <NavLink to="/sabbatical"><button className='rounded-md  px-3.5 py-1.5 text-sm font-semibold leading-7 text-white'>LOA</button></NavLink>
 
         <NavLink 
           to="/committee"><button className='rounded-md  px-3.5 py-1.5 text-sm font-semibold leading-7 text-white' >Committee Members</button>
