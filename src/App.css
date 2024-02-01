@@ -67,18 +67,33 @@
 
 
   .table-container {
-    height: 700px; /* Set a specific height for the container */
-    width: 1800px;
-    overflow-y: auto; /* Allow vertical scrolling */
-    overflow-x: auto;
+    height: 500px; /* Set a specific height for the container */
+    width: 1400px;
+    overflow: auto; /* Allow vertical scrolling */
   }
 
 
   .actual-head th:nth-child(even) {
     background-color: #000000; /* Set the background color for even elements */
   }
+
+  .actual-head th:nth-child(odd) {
+    @apply bg-gray-900 bg-opacity-95
+  }
+
   
 .color th:nth-child(n+7):nth-child(-n+11),
 .color th:nth-child(n+17):nth-child(-n+20) {
   background-color: #000000; /* Set the background color for the specified range */
+}
+
+
+.color th:nth-child(n+1):nth-child(-n+6),
+.color th:nth-child(n+12):nth-child(-n+16),
+.color th:nth-child(n+21):nth-child(-n+22) {
+  @apply bg-gray-900 bg-opacity-95
+}
+
+.weighedTotal{
+  background-color: #000000 !important; 
 }

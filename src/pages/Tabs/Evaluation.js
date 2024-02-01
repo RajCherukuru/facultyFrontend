@@ -392,7 +392,7 @@ const Evaluation = () => {
                         scope="col"
                         className="px-12 py-3.5 text-sm font-normal text-left rtl:text-right text-gray-500 dark:text-gray-400"
                       >
-                        Student mentoring (Except PhD Students)
+                        Students mentoring
                       </th>
 
                      
@@ -439,7 +439,7 @@ const Evaluation = () => {
                         scope="col"
                         className="px-4 py-3.5 text-sm font-normal text-left rtl:text-right text-gray-500 dark:text-gray-400"
                       >
-                        Student mentoring (PhD students)
+                        PhD students mentoring
                       </th>
 
 
@@ -497,12 +497,15 @@ const Evaluation = () => {
 
                       </>)}
 
-                      <th
-                        scope="col"
-                        className="px-4 py-3.5 text-sm font-normal text-left rtl:text-right text-gray-500 dark:text-gray-400"
-                      >
-                        Weighted Total
-                      </th>
+
+
+                     
+                    
+
+                       
+
+
+
 
                       {/* <th
                         scope="col"
@@ -510,6 +513,14 @@ const Evaluation = () => {
                       >
                         Assignment
                       </th> */}
+
+
+                      <th
+                      scope="col"
+                      className={`${filterRank === "Teaching Faculty" ? 'weighedTotal ' : ''}px-4 py-3.5 text-sm font-normal text-left rtl:text-right text-gray-500 dark:text-gray-400`}
+                    >
+                      Weighted Total
+                    </th>
 
 
                       <th
@@ -758,35 +769,30 @@ const Evaluation = () => {
                                   />
                                 </td> */}
 
-                                <td className="py-4 px-4 whitespace-nowrap">
-                                  <input
-                                    type="number"
-                                    min={0}
-                                    max={4}
-                                    value={teaching}
-                                    onChange={(e) => setTeaching(parseFloat(e.target.value))}
-                                  />
-                                </td>
 
-                                <td className="py-4 px-4 whitespace-nowrap">
-                                  <input
-                                    type="number"
-                                    min={0}
-                                    max={4}
-                                    value={research}
-                                    onChange={(e) => setResearch(parseFloat(e.target.value))}
-                                  />
-                                </td>
+                                
 
-                                <td className="py-4 px-4 whitespace-nowrap">
-                                  <input
-                                    type="number"
-                                    min={0}
-                                    max={4}
-                                    value={service}
-                                    onChange={(e) => setService(parseFloat(e.target.value))}
-                                  />
-                                </td>
+                                
+
+
+                                <td className="px-4 py-4 whitespace-nowrap text-sm text-gray-500 dark:text-gray-300">
+                                {row.teaching}
+                            </td>
+  
+  
+                             <td className="px-4 py-4 whitespace-nowrap text-sm text-gray-500 dark:text-gray-300">
+                                {row.research}
+                            </td>
+  
+                            <td className="px-4 py-4 whitespace-nowrap text-sm text-gray-500 dark:text-gray-300">
+                                {row.service}
+                            </td>
+
+
+
+
+
+                                
 
                                 <td className="py-4 px-4 whitespace-nowrap">
                                   <input
@@ -983,19 +989,7 @@ const Evaluation = () => {
                                   </>
                                   }
 
-                            <td className="py-4 px-4 whitespace-nowrap">
-                              <input
-                                type="number"
-                                value={weightedTotal}
-                                onChange={(e) => {
-                                        const newValue = parseFloat(e.target.value);
-                                        if (!isNaN(newValue) && newValue >= 0 && newValue <= 4) {
-                                          setWeightedTotal(newValue);
-                                        }
-                                      }}
-                                
-                              />
-                            </td>
+                            
 
                             {/* <td className="py-4 px-4 whitespace-nowrap">
                               <input
@@ -1004,6 +998,11 @@ const Evaluation = () => {
                                 onChange={(e) => setAssignment(e.target.value)}
                               />
                             </td> */}
+
+
+                            <td className="px-4 py-4 whitespace-nowrap text-sm text-gray-500 dark:text-gray-300">
+                              {row.weightedTotal}
+                          </td>
 
                             <td className="px-4 py-4 whitespace-nowrap text-sm text-gray-500 dark:text-gray-300 ">
                                 <div className="flex gap-3">
