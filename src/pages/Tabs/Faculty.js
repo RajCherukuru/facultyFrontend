@@ -16,6 +16,7 @@ const Faculty = () => {
   const [editId, setEditId] = useState(-1);
 
   const [name, setName] = useState("");
+  const [link, setLink] = useState("");
   const [currentRank, setCurrentRank] = useState("");
   const [startDate, setStartDate] = useState("");
   const [teaching, setTeaching] = useState(0);
@@ -64,6 +65,7 @@ const Faculty = () => {
         const resDataValue = res.data.value;
         // Set each state individually
         setName(resDataValue.name);
+        setLink(resDataValue.link)
         setCurrentRank(resDataValue.currentRank);
         setStartDate(resDataValue.startDate );
         setTeaching(resDataValue.teaching);
@@ -97,6 +99,7 @@ const Faculty = () => {
     try {
       await axios.put(`${updatefaculty_api}/${id}`, {
         name,
+        link,
         currentRank,
         startDate,
         teaching,
@@ -306,7 +309,7 @@ const Faculty = () => {
                          <tr key={row._id} className={index % 2 === 0 ? 'bg-richblack-900' :  'bg-gray-800'}>
 
                          <td className="py-4 px-4 whitespace-nowrap   text-gray-500 dark:text-gray-300 sticky-col">
-                              {row.name}
+                              <a className="text-blue-600 underline" href={row.link}>{row.name}</a>
                           </td>
 
                           <td className="px-4 py-4 whitespace-nowrap text-lg text-gray-500 dark:text-gray-300">
@@ -388,12 +391,23 @@ const Faculty = () => {
 
                         <tr key={row._id}  className={index % 2 === 0 ? 'bg-richblack-900' :  'bg-gray-800'}>
 
-                            <td className="py-4 px-4 whitespace-nowrap ">
+                            <td className="py-4 px-4 whitespace-nowrap flex gap-2 ">
+
                               <input
                                 type="text"
                                 value={name}
                                 onChange={(e) => setName(e.target.value)}
+                                placeholder="name"
                               />
+
+                              <input
+                                type="text"
+                                value={link}
+                                onChange={(e) => setLink(e.target.value)}
+                                placeholder="link"
+                              />
+
+
                             </td>
 
                             <td className="py-4 px-4 whitespace-nowrap">

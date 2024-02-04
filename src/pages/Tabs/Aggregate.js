@@ -685,7 +685,7 @@ function AllDataHandler(){
                             <tr key={row._id} className={row.color === 1 ? 'bg-indigo-900' : (index % 2 === 0 ? 'bg-richblack-900' : 'bg-gray-800')}>
 
                          <td className="py-4 px-4 whitespace-nowrap text-gray-500 dark:text-gray-300 sticky-col">
-                              {row.name}
+                         <a className="text-blue-600 underline" href={row.link}>{row.name}</a>
                           </td>
 
                           <td className="px-4 py-4 whitespace-nowrap text-sm text-gray-500 dark:text-gray-300">

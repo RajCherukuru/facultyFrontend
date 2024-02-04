@@ -19,6 +19,8 @@ const Assignments = () => {
 
   // Separate states for each form field
   const [name, setName] = useState("");
+  const [link, setLink] = useState("");
+
   const [currentRank, setCurrentRank] = useState("");
   const [startingAsu, setStartingAsu] = useState("");
   const [teaching, setTeaching] = useState(0);
@@ -68,6 +70,7 @@ const Assignments = () => {
         const resDataValue = res.data.value;
         // Set each state individually
         setName(resDataValue.name);
+        setLink(resDataValue.link)
         setCurrentRank(resDataValue.currentRank);
         setStartingAsu(resDataValue.startingAsu );
         setTeaching(resDataValue.teaching);
@@ -552,7 +555,7 @@ const Assignments = () => {
                          <tr key={row._id}  className={index % 2 === 0 ? 'bg-richblack-900' :  'bg-gray-800'}>
 
                          <td className="py-4 px-4 whitespace-nowrap text-gray-500 dark:text-gray-300 sticky-col">
-                              {row.name}
+                         <a className="text-blue-600 underline" href={row.link}>{row.name}</a>
                           </td>
 
                           <td className="px-4 py-4 whitespace-nowrap text-sm text-gray-500 dark:text-gray-300">
