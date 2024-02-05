@@ -529,7 +529,7 @@ function AllDataHandler(){
                         scope="col"
                         className="py-3.5 px-4 text-sm font-normal text-left rtl:text-right text-gray-500 dark:text-gray-400"
                       >
-                        <span>Overall</span>
+                        <span className="font-extrabold">Overall</span>
                       </th>
 
 
@@ -572,7 +572,7 @@ function AllDataHandler(){
 
                       <th
                         scope="col"
-                        className="px-4 py-3.5 text-sm font-normal text-left rtl:text-right text-gray-500 dark:text-gray-400"
+                        className="px-4 py-3.5 text-sm text-left font-extrabold rtl:text-right text-gray-500 dark:text-gray-400"
                       >
                         Overall 2
                       </th>
@@ -609,7 +609,7 @@ function AllDataHandler(){
 
                       <th
                         scope="col"
-                        className="px-4 py-3.5 text-sm font-normal text-left rtl:text-right text-gray-500 dark:text-gray-400"
+                        className="px-4 py-3.5 text-sm font-extrabold text-left rtl:text-right text-gray-500 dark:text-gray-400"
                       >
                         Overall3
                       </th>
@@ -618,7 +618,7 @@ function AllDataHandler(){
 
                       <th
                       scope="col"
-                      className={`${filterRank === "Teaching Faculty" ? 'weighedTotal ' : ''}px-4 py-3.5 text-sm font-normal text-left rtl:text-right text-gray-500 dark:text-gray-400`}
+                      className={`${filterRank === "Teaching Faculty" ? 'weighedTotal ' : ''}px-4 py-3.5 text-sm font-extrabold text-left rtl:text-right text-gray-500 dark:text-gray-400`}
                     >
                       Weighted Total
                     </th>
@@ -726,7 +726,7 @@ function AllDataHandler(){
                               {row.notes}
                           </td>
 
-                          <td className="px-4 py-4 whitespace-nowrap text-sm text-gray-500 dark:text-gray-300">
+                          <td className="px-4 py-4 whitespace-nowrap font-extrabold text-sm text-gray-500 dark:text-gray-300">
                               {row.overall}
                           </td>
 
@@ -747,7 +747,7 @@ function AllDataHandler(){
                               {row.notes2}
                           </td>
 
-                          <td className="px-4 py-4 whitespace-nowrap text-sm text-gray-500 dark:text-gray-300">
+                          <td className="px-4 py-4 whitespace-nowrap font-extrabold text-sm text-gray-500 dark:text-gray-300">
                               {row.overall2}
                           </td>
                           </>)}
@@ -766,13 +766,13 @@ function AllDataHandler(){
                               {row.notes3}
                           </td>
 
-                          <td className="px-4 py-4 whitespace-nowrap text-sm text-gray-500 dark:text-gray-300">
+                          <td className="px-4 py-4 whitespace-nowrap font-extrabold text-sm text-gray-500 dark:text-gray-300">
                               {row.overall3}
                           </td>
 
                           </>)}
 
-                          <td className="px-4 py-4 whitespace-nowrap text-sm text-gray-500 dark:text-gray-300">
+                          <td className="px-4 py-4 whitespace-nowrap font-extrabold text-sm text-gray-500 dark:text-gray-300">
                               {row.weightedTotal}
                           </td>
 
