@@ -416,7 +416,7 @@ const Evaluation = () => {
                         scope="col"
                         className="py-3.5  px-4 text-sm font-normal text-left rtl:text-right text-gray-500 dark:text-gray-400"
                       >
-                        <span className="font-extrabold">Overall</span>
+                        <span className="font-extrabold text-yellow-50">Overall</span>
                       </th>
 
 
@@ -453,15 +453,15 @@ const Evaluation = () => {
                         scope="col"
                         className="py-3.5 px-4 text-sm font-normal text-left rtl:text-right text-gray-500 dark:text-gray-400"
                       >
-                        <span>Notes2</span>
+                        <span>Notes</span>
                       </th>
 
 
                       <th
                         scope="col"
-                        className="px-4 py-3.5 text-sm font-extrabold text-left rtl:text-right text-gray-500 dark:text-gray-400"
+                        className="px-4 py-3.5 text-sm font-extrabold text-left rtl:text-right text-yellow-50 dark:text-gray-400"
                       >
-                        Overall 2
+                        Overall
                       </th>
                       </>)
                         }
@@ -489,16 +489,16 @@ const Evaluation = () => {
                         scope="col"
                         className="px-12 py-3.5 text-sm font-normal text-left rtl:text-right text-gray-500 dark:text-gray-400"
                       >
-                        Notes3
+                        Notes
                       </th>
 
                      
 
                       <th
                         scope="col"
-                        className="px-4 py-3.5 text-sm font-extrabold text-left rtl:text-right text-gray-500 dark:text-gray-400"
+                        className="px-4 py-3.5 text-sm font-extrabold text-left rtl:text-right text-yellow-50 dark:text-gray-400"
                       >
-                        Overall3
+                        Overall
                       </th>
 
                       </>)}
@@ -523,7 +523,7 @@ const Evaluation = () => {
 
                       <th
                       scope="col"
-                      className={`${filterRank === "Teaching Faculty" ? 'weighedTotal ' : ''}px-4 py-3.5 text-sm font-extrabold text-left rtl:text-right text-gray-500 dark:text-gray-400`}
+                      className={`${filterRank === "Teaching Faculty" ? 'weighedTotal ' : ''}px-4 py-3.5 text-sm font-extrabold text-left rtl:text-right text-orange-400 dark:text-gray-400`}
                     >
                       Weighted Total
                     </th>
@@ -620,11 +620,11 @@ const Evaluation = () => {
                               {row.teachingStudentMentor}
                           </td>
 
-                          <td className="px-4 py-4 whitespace-nowrap text-sm text-gray-500 dark:text-gray-300">
-                              {row.notes}
+                          <td className="px-4 py-4  text-sm text-gray-500 dark:text-gray-300">
+                              <div className="h-16 overflow-hidden hover:h-full">{row.notes}</div>
                           </td>
 
-                          <td className="px-4 py-4 whitespace-nowrap font-extrabold text-sm text-gray-500 dark:text-gray-300">
+                          <td className="px-4 py-4 whitespace-nowrap font-extrabold text-sm text-yellow-50 dark:text-gray-300">
                               {row.overall}
                           </td>
 
@@ -641,11 +641,11 @@ const Evaluation = () => {
                               {row.researchStudentMentor}
                           </td>
 
-                          <td className="px-4 py-4 whitespace-nowrap text-sm text-gray-500 dark:text-gray-300">
-                              {row.notes2}
+                          <td className="px-4 py-4  text-sm text-gray-500 dark:text-gray-300">
+                          <div className="h-16 overflow-hidden hover:h-full">{row.notes2}</div>
                           </td>
 
-                          <td className="px-4 py-4 whitespace-nowrap font-extrabold text-sm text-gray-500 dark:text-gray-300">
+                          <td className="px-4 py-4 whitespace-nowrap font-extrabold text-sm text-yellow-50 dark:text-gray-300">
                               {row.overall2}
                           </td>
                           </>)}
@@ -660,17 +660,17 @@ const Evaluation = () => {
                               {row.external}
                           </td>
 
-                          <td className="px-4 py-4 whitespace-nowrap text-sm text-gray-500 dark:text-gray-300">
-                              {row.notes3}
+                          <td className="px-4 py-4 overflow-hidden text-sm text-gray-500 dark:text-gray-300">
+                            <div className="h-16 overflow-hidden hover:h-full">{row.notes3}</div>
                           </td>
 
-                          <td className="px-4 py-4 whitespace-nowrap font-extrabold text-sm text-gray-500 dark:text-gray-300">
+                          <td className="px-4 py-4 whitespace-nowrap font-extrabold text-sm text-yellow-50 dark:text-gray-300">
                               {row.overall3}
                           </td>
 
                           </>)}
 
-                          <td className="px-4 py-4 whitespace-nowrap font-extrabold text-sm text-gray-500 dark:text-gray-300">
+                          <td className="px-4 py-4 whitespace-nowrap font-extrabold text-sm text-orange-400 dark:text-gray-300">
                               {row.weightedTotal}
                           </td>
 
