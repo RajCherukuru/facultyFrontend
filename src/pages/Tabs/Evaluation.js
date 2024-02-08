@@ -231,7 +231,8 @@ const Evaluation = () => {
             <div className="text-white text-xl">0 = unsatisfactory, 1 = satisfactory, 2 = good, 3 = excellent, 4 = superior</div>
 
             <div>
-            <a className="text-blue-600 underline text-xl" href="https://arizonastateu.sharepoint.com/sites/O365FSESCAIFaculty-PersonnelCommitteeActions/_layouts/15/AccessDenied.aspx?Source=https%3A%2F%2Farizonastateu%2Esharepoint%2Ecom%2Fsites%2FO365FSESCAIFaculty%2DPersonnelCommitteeActions%2FShared%20Documents%2FSCAI%20Personnel%20Committee%20Actions%2FAnnual%20Evaluations%2F2023%20ASU%20Vita%20Review%20Materials%3Fcsf%3D1%26web%3D1%26e%3DwJltAZ%26cid%3D176a6d1a%2D902d%2D4df9%2Dbfcf%2Dc65266fb8975&correlation=948408a1%2D50d9%2D4000%2Df2ec%2D9e1b8edd38a4&Type=item&name=26db0e5c%2D31c5%2D4aca%2D9a20%2Dba35ea196e41&listItemId=3797&listItemUniqueId=b79fb498%2D2dda%2D4cf0%2D8d0f%2D6a808f6fb2b4">
+            <a className="text-blue-600 underline text-xl" href="https://arizonastateu.sharepoint.com/sites/O365FSESCAIFaculty-PersonnelCommitteeActions/_layouts/15/AccessDenied.aspx?Source=https%3A%2F%2Farizonastateu%2Esharepoint%2Ecom%2Fsites%2FO365FSESCAIFaculty%2DPersonnelCommitteeActions%2FShared%20Documents%2FSCAI%20Personnel%20Committee%20Actions%2FAnnual%20Evaluations%2F2023%20ASU%20Vita%20Review%20Materials%3Fcsf%3D1%26web%3D1%26e%3DwJltAZ%26cid%3D176a6d1a%2D902d%2D4df9%2Dbfcf%2Dc65266fb8975&correlation=948408a1%2D50d9%2D4000%2Df2ec%2D9e1b8edd38a4&Type=item&name=26db0e5c%2D31c5%2D4aca%2D9a20%2Dba35ea196e41&listItemId=3797&listItemUniqueId=b79fb498%2D2dda%2D4cf0%2D8d0f%2D6a808f6fb2b4"
+            target="_blank">
           Additional Materials</a>
             </div>
 
@@ -583,7 +584,7 @@ const Evaluation = () => {
                          <tr key={row._id} className={index % 2 === 0 ? 'bg-richblack-900' :  'bg-gray-800'}>
 
                          <td className="py-4 px-4 whitespace-nowrap text-gray-500 dark:text-gray-300 sticky-col">
-                         <a className="text-blue-600 underline" href={row.link}>{row.name}</a>
+                         <a className="text-blue-600 underline" href={row.link} target="_blank">{row.name}</a>
                           </td>
 
                           <td className="px-4 py-4 whitespace-nowrap text-sm text-gray-500 dark:text-gray-300">

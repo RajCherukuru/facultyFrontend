@@ -341,7 +341,7 @@ function AllDataHandler(){
 {        user !== "Staff" &&
          <div className="flex gap-3">
          <button  onClick={AllDataHandler} className="rounded-md bg-indigo-600 px-3.5 py-1.5 text-sm font-semibold leading-7 text-white hover:bg-indigo-500 ">
-                Get Enitre Data
+                Refresh
               </button>
 
 
@@ -421,7 +421,7 @@ function AllDataHandler(){
 
                     <th
                         scope="col"
-                        colSpan="5"
+                        
                         className="px-4 py-3.5 text-sm font-normal border-2  text-center rtl:text-right text-gray-500 dark:text-gray-400"
                       >
                         Results
@@ -631,12 +631,12 @@ function AllDataHandler(){
                       </th> */}
 
 
-                      { user !== "Staff" &&<th
+                      {/* { user !== "Staff" &&<th
                         scope="col"
                         className="px-4 py-3.5 text-sm font-normal text-left rtl:text-right text-gray-500 dark:text-gray-400"
                       >
                         Actions
-                      </th>}
+                      </th>} */}
 
 
 
@@ -685,7 +685,7 @@ function AllDataHandler(){
                             <tr key={row._id} className={row.color === 1 ? 'bg-indigo-900' : (index % 2 === 0 ? 'bg-richblack-900' : 'bg-gray-800')}>
 
                          <td className="py-4 px-4 whitespace-nowrap text-gray-500 dark:text-gray-300 sticky-col">
-                         <a className="text-blue-600 underline" href={row.link}>{row.name}</a>
+                         <a className="text-blue-600 underline" href={row.link} target="_blank">{row.name}</a>
                           </td>
 
                           <td className="px-4 py-4 whitespace-nowrap text-sm text-gray-500 dark:text-gray-300">
@@ -781,12 +781,12 @@ function AllDataHandler(){
                           </td> */}
 
 
-                            { user !== "Staff" && <td className="px-4 py-4 whitespace-nowrap text-sm text-gray-500 dark:text-gray-300 ">
+                            {/* { user !== "Staff" && <td className="px-4 py-4 whitespace-nowrap text-sm text-gray-500 dark:text-gray-300 ">
                             <div className="flex gap-3">
                                 <button onClick={()=>handleEdit(row._id)}>edit</button>
                                 <button onClick={()=>handleDelete(row._id)}>delete</button> 
                             </div>
-                            </td>}
+                            </td>} */}
 
                                 </tr>
 
