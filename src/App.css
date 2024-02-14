@@ -70,7 +70,7 @@
     /* height: 500px; 
     width: 1400px; */
     height: calc(100vh - 310px);
-   width: 100vw;
+   width: calc(100vw - 20px);
     overflow: auto; 
   }
 
