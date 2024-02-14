@@ -32,13 +32,13 @@
 
    .select-font {
     font-size: 1.7em !important;
-    appearance: none; /* This can help in removing default styles in some browsers */
-    padding: 0.5em; /* Adjust padding as needed */
-    margin: 0; /* Remove default margin */
-    border: 1px solid #ccc; /* Add border if needed */
-    border-radius: 4px; /* Add border-radius if needed */
-    outline: none; /* Remove default outline style */
-    box-sizing: border-box; /* Ensure proper sizing */
+    appearance: none; 
+    padding: 0.5em; 
+    margin: 0; 
+    border: 1px solid #ccc;
+    border-radius: 4px; 
+    outline: none; 
+    box-sizing: border-box; 
     width: 200px !important;  
     background-color: grey;
   }
@@ -67,9 +67,11 @@
 
 
   .table-container {
-    height: 500px; /* Set a specific height for the container */
-    width: 1400px;
-    overflow: auto; /* Allow vertical scrolling */
+    /* height: 500px; 
+    width: 1400px; */
+    height: calc(100vh - 310px);
+   width: 100vw;
+    overflow: auto; 
   }
 
 

@@ -80,8 +80,18 @@ const NavBar = (props) => {
         </NavLink>}
 
 
-        <NavLink to="/aggregate"><button className='rounded-md  px-3.5 py-1.5 text-sm font-semibold leading-7 text-white' >Aggregated SHEET</button></NavLink>
+        <NavLink to="/aggregate"><button className='rounded-md  px-3.5 py-1.5 text-sm font-semibold leading-7 text-white' >Aggregated Sheet</button></NavLink>
+
+        { user === "Chair" && <NavLink to="/admin"><button className='rounded-md  px-3.5 py-1.5 text-sm font-semibold leading-7 text-white' >
+        Admin Page</button>
+        </NavLink>}
+
+      
       </div>
+
+      
+
+
     }
     
     </>
