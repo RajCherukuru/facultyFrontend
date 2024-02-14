@@ -23,15 +23,38 @@ const NavBar = (props) => {
 
   const navigate= useNavigate();
 
+  const [colour, setColour]= useState("dark");
+
   return (
 
-    <div className="flex w-11/12 max-w-[1160px] mx-auto justify-around items-center py-5 ">
+    <div className="flex w-full max-w-[1300px] mx-auto justify-between items-center py-5 ">
 
-    <Link to="/">
 
-        <img src={asu} alt='Logo' width={100} height={32} loading='lazy' className='rounded-md'/>
-        
-    </Link>
+    <div className='flex justify-between items-center gap-2'>
+
+    {/* <div className=' bg-richblack-800 w-1/2 rounded-full py-1 border-b flex justify-evenly'>
+            <button
+                onClick={()=>(setColour("dark"))}
+                className= {`${(colour === "dark" ) ? 
+                "bg-richblack-900 text-richblack-5" : " bg-transparent text-richblack-200"} 
+                py-2 px-6  text-white rounded-full cursor-pointer`} >Dark
+             </button>
+            <button onClick={()=>(setColour("light"))}
+                className= {`${(colour === "light" ) ? 
+                "bg-richblack-900 text-richblack-5" : " bg-transparent text-richblack-200"} 
+                py-2 px-6  text-white rounded-full cursor-pointer`}>Light
+             </button>
+        </div> */}
+
+        <Link to="/">
+          <img src={asu} alt='Logo' width={100} height={32} loading='lazy' className='rounded-md'/>
+        </Link>
+
+
+    </div>
+
+       
+
 
     <>
     {
@@ -94,6 +117,7 @@ const NavBar = (props) => {
     
     </div>
 
+    
 
     
 

@@ -421,7 +421,7 @@ function AllDataHandler(){
 
                     <th
                         scope="col"
-                        
+                        colSpan={(user === "Chair") ? "3" : "1"}
                         className="px-4 py-3.5 text-sm font-normal border-2  text-center rtl:text-right text-gray-500 dark:text-gray-400"
                       >
                         Results
@@ -623,20 +623,20 @@ function AllDataHandler(){
                       Weighted Total
                     </th>
 
-                      {/* <th
+                      { (user==="Chair") &&  <th
                         scope="col"
                         className="px-4 py-3.5 text-sm font-normal text-left rtl:text-right text-gray-500 dark:text-gray-400"
                       >
                         Assignment
-                      </th> */}
+                      </th>}
 
 
-                      {/* { user !== "Staff" &&<th
+                      { user === "Chair" &&<th
                         scope="col"
                         className="px-4 py-3.5 text-sm font-normal text-left rtl:text-right text-gray-500 dark:text-gray-400"
                       >
                         Actions
-                      </th>} */}
+                      </th>}
 
 
 
@@ -776,17 +776,17 @@ function AllDataHandler(){
                               {row.weightedTotal}
                           </td>
 
-                          {/* <td className="px-4 py-4 whitespace-nowrap text-sm text-gray-500 dark:text-gray-300">
+                          { (user==="Chair") && <td className="px-4 py-4 whitespace-nowrap text-sm text-gray-500 dark:text-gray-300">
                               {row.assignment}
-                          </td> */}
+                          </td>}
 
 
-                            {/* { user !== "Staff" && <td className="px-4 py-4 whitespace-nowrap text-sm text-gray-500 dark:text-gray-300 ">
+                            { user === "Chair" && <td className="px-4 py-4 whitespace-nowrap text-sm text-gray-500 dark:text-gray-300 ">
                             <div className="flex gap-3">
                                 <button onClick={()=>handleEdit(row._id)}>edit</button>
-                                <button onClick={()=>handleDelete(row._id)}>delete</button> 
+                                {/* <button onClick={()=>handleDelete(row._id)}>delete</button>  */}
                             </div>
-                            </td>} */}
+                            </td>}
 
                                 </tr>
 
@@ -1074,19 +1074,25 @@ function AllDataHandler(){
                                   {row.weightedTotal}
                               </td>
 
-                            {/* <td className="py-4 px-4 whitespace-nowrap">
+                            {/* { (user==="Chair") &&  <td className="py-4 px-4 whitespace-nowrap">
                               <input
                                 type="text"
                                 value={assignment}
                                 onChange={(e) => setAssignment(e.target.value)}
                               />
-                            </td> */}
+                            </td>} */}
 
-                            <td className="px-4 py-4 whitespace-nowrap text-sm text-gray-500 dark:text-gray-300 ">
+                            { (user==="Chair") && <td className="px-4 py-4 whitespace-nowrap text-sm text-gray-500 dark:text-gray-300">
+                              {row.assignment}
+                          </td>}
+
+
+
+                             {(user==="Chair") && <td className="px-4 py-4 whitespace-nowrap text-sm text-gray-500 dark:text-gray-300 ">
                                 <div className="flex gap-3">
                                     <button onClick={()=>handleUpdate(row._id)}>Update</button>
                                 </div>
-                                </td>
+                              </td>}
 
 
                         </tr>   
