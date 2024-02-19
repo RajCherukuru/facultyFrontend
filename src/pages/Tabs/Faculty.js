@@ -170,10 +170,10 @@ const Faculty = () => {
         </div> */}
 
           <div>
-            <h2 className="text-lg font-medium text-gray-800 dark:text-white">
+            <h2 className="text-lg font-medium  dark:text-white">
             Faculty
             </h2>
-            <div className="text-lg font-medium text-gray-800 dark:text-white">Academic Year: 2023-2024</div>
+            <div className="text-lg font-medium  dark:text-white">Academic Year: 2023-2024</div>
           </div>
 
 

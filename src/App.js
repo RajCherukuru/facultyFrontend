@@ -27,10 +27,11 @@ function App() {
 
   const [isLoggedIn, setIsLoggedIn]= useState(false);
   const {user}= useSelector( (state) => state.profile);
+  const {colour}= useSelector( (state) => state.colour);
 
 
   return ( 
- <div className="w-[100vw] h-[100vh] flex flex-col gap-6  bg-richblack-900">
+ <div className={`w-[100vw] h-[100vh] flex flex-col gap-6 ${colour=="dark" ? "dark" : "light"}`}>
 
 
 

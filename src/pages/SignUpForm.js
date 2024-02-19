@@ -166,7 +166,7 @@ const handleRankChange = async (event) => {
            { accountType === "Committee" && <>
 
             <div className="flex flex-col gap-2">
-                <div className= 'text-white text-lg'>Select Rank:</div>
+                <div className= ' text-lg'>Select Rank:</div>
                 <select className="bg-richblack-800 border-b rounded-sm p-[9px] text-white" onChange={handleRankChange}>
                 <option >choose rank</option>
 
@@ -180,9 +180,9 @@ const handleRankChange = async (event) => {
 
 
             <div className="flex flex-col gap-2">
-                <div className="text-white text-lg">Select Name:</div>
+                <div className=" text-lg">Select Name:</div>
                 <select
-        className="bg-richblack-800 border-b rounded-sm text-white p-[9px]"
+        className="bg-richblack-800 border-b rounded-sm  p-[9px]"
         onChange={(e) => {
             setName(e.target.value);
             console.log(name);
@@ -204,7 +204,7 @@ const handleRankChange = async (event) => {
 
 
                 { accountType=== "Staff" && <label  className='flex flex-col w-full' >
-                    <p className= 'text-white' > Full Name <sup>*</sup></p>
+                    <p> Full Name <sup>*</sup></p>
                     <input className=" signup-input bg-richblack-800 border-b rounded-sm p-[9px]"
                         required  
                          value={name} type='text' name='Name' onChange={(e)=> setName(e.target.value)} placeholder='Enter Full Name'></input>
@@ -217,7 +217,7 @@ const handleRankChange = async (event) => {
 
 
             <label  className='flex flex-col'>
-                    <p className= 'text-white'>Email Address <sup>*</sup></p>
+                    <p >Email Address <sup>*</sup></p>
                     <input className=" signup-input bg-richblack-800 border-b rounded-sm p-[9px] text-white"
                         required  
                         value={formData.email} type='email' name='email' onChange={changeHandler} placeholder='Enter Email Address'></input>
@@ -232,7 +232,7 @@ const handleRankChange = async (event) => {
 
 
                 <label  className='flex flex-col w-full relative' >
-                    <p className= 'text-white'>Create Password <sup>*</sup></p>
+                    <p >Create Password <sup>*</sup></p>
                     <input className="signup-input bg-richblack-800 border-b rounded-sm p-[9px] text-white"
                     required
                     type={createPassword ? ("password"):("text")}
@@ -248,7 +248,7 @@ const handleRankChange = async (event) => {
 
 
                 <label  className='flex flex-col w-full relative'>
-                    <p className= 'text-white'>Confirm Password <sup>*</sup></p>
+                    <p >Confirm Password <sup>*</sup></p>
                     <input className="signup-input bg-richblack-800 border-b rounded-sm p-[9px] text-white"
                     required
                     type={confirmPassword ? ("password"):("text")}

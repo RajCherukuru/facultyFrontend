@@ -324,7 +324,7 @@ function AllDataHandler(){
         <div className="flex flex-col gap-2">
 
         <div className="flex gap-5 place-items-center">
-          <label className="text-white label-font">Select Professor Rank:</label>
+          <label className="label-font">Select Professor Rank:</label>
           <select className="select-font bg-richblack-900" onChange={handleRankChange}>
             <option value="Assistant Professor">Assistant Professor</option>
             <option value="Associate Professor">Associate Professor</option>
@@ -334,7 +334,7 @@ function AllDataHandler(){
           </select>
         </div>
 
-            <div className="text-white text-xl">0 = unsatisfactory, 1 = satisfactory, 2 = good, 3 = excellent, 4 = superior</div>
+            <div className=" text-xl">0 = unsatisfactory, 1 = satisfactory, 2 = good, 3 = excellent, 4 = superior</div>
 
           </div>
 

@@ -16,7 +16,7 @@ const Template = (props) => {
 
 
         <div className='flex w-2/5 max-w-[450px] flex-col gap-4'>
-            <h1 className='text-white text-3xl font-bold'>{props.title}</h1>
+            <h1 className=' text-3xl font-bold'>{props.title}</h1>
             <p className='flex flex-col'>
               <span className='text-richblack-100'>{props.desc1}</span>
               <span className='text-blue-100 italic '>{props.desc2}</span>

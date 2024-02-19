@@ -104,11 +104,11 @@ const Sabbatical = () => {
       <section className="px-4 mx-auto py-4 h-full min-h-100vh">
         <div className="flex items-center justify-between">
           <div>
-            <h2 className="text-lg font-medium text-gray-800 dark:text-white">
+            <h2 className="text-lg font-medium  dark:text-white">
             Faculty
             </h2>
-            <div className="text-lg font-medium text-gray-800 dark:text-white">Academic Year: 2023-2024</div>
-            <p className="mt-1 text-sm text-gray-500 dark:text-gray-300">
+            <div className="text-lg font-medium  dark:text-white">Academic Year: 2023-2024</div>
+            <p className="mt-1 text-sm  dark:text-gray-300">
               This is a list of all Faculty. You can add new Faculty, edit
               or delete existing ones.
             </p>

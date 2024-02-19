@@ -129,11 +129,11 @@ const Committee = () => {
 
 
           <div>
-            <h2 className="text-lg font-medium text-gray-800 dark:text-white">
+            <h2 className="text-lg font-medium  dark:text-white">
             Faculty
             </h2>
-            <div className="text-lg font-medium text-gray-800 dark:text-white">Academic Year: 2023-2024</div>
-            <p className="mt-1 text-sm text-gray-500 dark:text-gray-300">
+            <div className="text-lg font-medium  dark:text-white">Academic Year: 2023-2024</div>
+            <p className="mt-1 text-sm dark:text-gray-300">
               This is a list of all Faculty. You can add new Faculty, edit
               or delete existing ones.
             </p>
@@ -165,47 +165,47 @@ const Committee = () => {
 
 
         </div>
-        <div className="flex flex-col mt-6">
+        <div className="flex flex-col mt-6 ">
           <div className="-mx-4 -my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">
             <div className="inline-block min-w-full py-2 align-middle md:px-6 lg:px-8">
               <div className=" table-container overflow-hidden border border-gray-200 dark:border-gray-700 md:rounded-lg">
 
-                <table className="min-w-full divide-y divide-gray-200 dark:divide-gray-700">
+                <table className="min-w-full divide-y divide-gray-200 dark:divide-gray-700 ">
 
 
 
-                  <thead className="bg-gray-50 dark:bg-gray-800 sticky-thead">
+                  <thead className="bg-gray-50 dark:bg-gray-800 sticky-thead ">
                     <tr>
                       <th
                         scope="col"
-                        className="py-3.5 px-4 text-sm font-normal text-left rtl:text-right text-gray-500 dark:text-gray-400"
+                        className="py-3.5 px-4 text-sm font-normal text-left rtl:text-right "
                       >
                         <span>Name</span>
                       </th>
                       <th
                         scope="col"
-                        className="px-12 py-3.5 text-sm font-normal text-left rtl:text-right text-gray-500 dark:text-gray-400"
+                        className="px-12 py-3.5 text-sm font-normal text-left rtl:text-right "
                       >
                         Email
                       </th>
 
                       <th
                         scope="col"
-                        className="px-4 py-3.5 text-sm font-normal text-left rtl:text-right text-gray-500 dark:text-gray-400"
+                        className="px-4 py-3.5 text-sm font-normal text-left rtl:text-right "
                       >
                         Current Rank
                       </th>
 
                       {/* <th
                         scope="col"
-                        className="px-4 py-3.5 text-sm font-normal text-left rtl:text-right text-gray-500 dark:text-gray-400"
+                        className="px-4 py-3.5 text-sm font-normal text-left rtl:text-right "
                       >
                         Academic Year
                       </th> */}
 
                      { user !== "Committee" && <th
                         scope="col"
-                        className="px-4 py-3.5 text-sm font-normal text-left rtl:text-right text-gray-500 dark:text-gray-400"
+                        className="px-4 py-3.5 text-sm font-normal text-left rtl:text-right "
                       >
                         Actions
                       </th>}

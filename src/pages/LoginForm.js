@@ -85,7 +85,7 @@ const LoginForm = (props) => {
 
 
     <div className='flex flex-col gap-1 '>
-        <label className='text-white' htmlFor='email'>Email Address</label>
+        <label  htmlFor='email'>Email Address</label>
         <input required  className="signup-input bg-richblack-800 border-b rounded-sm text-white p-[9px]" value={formData.email} type='email' name='email' onChange={changeHandler} id='email' placeholder='Enter email address'></input>
     </div>
 
@@ -93,7 +93,7 @@ const LoginForm = (props) => {
 
     <div className='relative' >
         <label className='flex flex-col' htmlFor='password'>
-            <p className='text-white'>Password</p>
+            <p >Password</p>
             <input 
             className="signup-input bg-richblack-800 border-b rounded-sm text-white p-[9px]"type={password ? ("password"):("text")}
             id='password' required value={formData.password} name='password' onChange={changeHandler} placeholder='Enter Password'>
