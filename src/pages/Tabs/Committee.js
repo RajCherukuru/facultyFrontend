@@ -152,12 +152,12 @@ const Committee = () => {
           </Link>
 }
 
-{ (user === "Chair" || user=== "Staff")  && 
-              <button onClick={roundRobin} className="rounded-md bg-indigo-600 px-3.5 py-1.5 text-sm font-semibold leading-7 text-white hover:bg-indigo-500 ">
-                Create Round Robin
-              </button>
-            
-}
+ {/*{ (user === "Chair" || user=== "Staff")  && 
+                              <button onClick={roundRobin} className="rounded-md bg-indigo-600 px-3.5 py-1.5 text-sm font-semibold leading-7 text-white hover:bg-indigo-500 ">
+                                Create Round Robin
+                              </button>
+                            
+                }*/}
 </div>
 
 
