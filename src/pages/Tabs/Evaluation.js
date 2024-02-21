@@ -219,7 +219,7 @@ const Evaluation = () => {
 
         <div className="flex gap-5 place-items-center">
           <label className=" label-font">Select Professor Rank:</label>
-          <select className="select-font bg-richblack-900" onChange={handleRankChange}>
+          <select className="select-font text-black" onChange={handleRankChange}>
             <option value="Assistant Professor">Assistant Professor</option>
             <option value="Associate Professor">Associate Professor</option>
             <option value="Professor">Professor</option>
@@ -735,7 +735,7 @@ const Evaluation = () => {
 
                        
 
-                        <tr key={row._id} className={index % 2 === 0 ? 'bg-richblack-900' : 'bg-gray-800'}>
+                        <tr key={row._id} className={`${index % 2 === 0 ? 'bg-richblack-900' : 'bg-gray-800'}`}>
 
 
 
