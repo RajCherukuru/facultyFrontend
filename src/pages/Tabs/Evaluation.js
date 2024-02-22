@@ -203,6 +203,33 @@ const Evaluation = () => {
     setFilterRank(updatedFilterRank);
     handleFilter(updatedFilterRank); // Pass the updated value directly to handleFilter
   };
+
+  const [teachingFilter, setTeachingFilter]= useState(true);
+  const [researchFilter, setResearchFilter]= useState(false);
+  const [serviceFilter, setServiceFilter]= useState(false);
+
+
+  function handleCategoryChange(e){
+    const value= e.target.value;
+    if(value == "Teaching"){
+      setTeachingFilter(true);
+      setResearchFilter(false);
+      setServiceFilter(false);
+    }
+
+    if(value == "Research"){
+      setTeachingFilter(false);
+      setResearchFilter(true);
+      setServiceFilter(false);
+    }
+
+    if(value == "Service"){
+      setTeachingFilter(false);
+      setResearchFilter(false);
+      setServiceFilter(true);
+    }
+
+  }
   
 
 
@@ -226,6 +253,14 @@ const Evaluation = () => {
             <option value="Research Faculty">Research Faculty</option>
             <option value="Teaching Faculty">Teaching Faculty</option>
           </select>
+
+          <select className="select-font text-black" onChange={handleCategoryChange}>
+            <option value="Teaching">Teaching</option>
+            <option value="Research">Research</option>
+            <option value="Service">Service</option>
+          </select>
+
+
         </div>
 
             <div className=" text-xl">0 = unsatisfactory, 1 = satisfactory, 2 = good, 3 = excellent, 4 = superior</div>
@@ -279,17 +314,17 @@ const Evaluation = () => {
                       </th>
 
 
-                      <th
+                    { teachingFilter &&  <th
                         scope="col"
                         colSpan="5"
                         className="px-4 py-3.5 text-sm font-normal border-2  text-center rtl:text-right text-gray-500 dark:text-gray-400"
                       >
                         Teaching
-                      </th>
+                      </th>}
 
 
                       {
-                     reserachCategory &&  <th
+                     reserachCategory && researchFilter &&  <th
                         scope="col"
                         colSpan="5"
                         className="px-4 py-3.5 text-sm font-normal border-2  text-center rtl:text-right text-gray-500 dark:text-gray-400"
@@ -299,7 +334,7 @@ const Evaluation = () => {
 
 
 
-                    {serviceCategory && <th
+                    {serviceCategory && serviceFilter && <th
                       scope="col"
                       colSpan="4"
                       className="px-4 py-3.5 text-sm font-normal border-2  text-center rtl:text-right text-gray-500 dark:text-gray-400"
@@ -309,7 +344,7 @@ const Evaluation = () => {
 
                     <th
                         scope="col"
-                        colSpan="5"
+                        colSpan="2"
                         className="px-4 py-3.5 text-sm font-normal border-2  text-center rtl:text-right text-gray-500 dark:text-gray-400"
                       >
                         Results
@@ -378,7 +413,8 @@ const Evaluation = () => {
                       </th>
 
 
-                      <th
+                     { teachingFilter && <>
+                     <th
                         scope="col"
                         className="py-3.5 px-4 text-sm font-normal text-left rtl:text-right text-gray-500 dark:text-gray-400"
                       >
@@ -419,11 +455,13 @@ const Evaluation = () => {
                       >
                         <span className="font-extrabold text-yellow-50">Overall</span>
                       </th>
+                      </>
+                      }
 
 
                      { 
                       
-                       reserachCategory && (<>
+                       reserachCategory && researchFilter && (<>
                       <th
                         scope="col"
                         className="px-4 py-3.5 text-sm font-normal text-left rtl:text-right text-gray-500 dark:text-gray-400"
@@ -468,7 +506,7 @@ const Evaluation = () => {
                         }
 
 
-                       { serviceCategory && (<>
+                       { serviceCategory && serviceFilter && (<>
 
                       <th
                         scope="col"
@@ -524,7 +562,9 @@ const Evaluation = () => {
 
                       <th
                       scope="col"
-                      className={`${filterRank === "Teaching Faculty" ? 'weighedTotal ' : ''}px-4 py-3.5 text-sm font-extrabold text-left rtl:text-right text-orange-400 dark:text-gray-400`}
+                      className={ `px-4 py-3.5 text-sm font-extrabold text-left rtl:text-right text-orange-400 dark:text-gray-400` }
+                      style={{ backgroundColor: 'rgb(34, 34, 34)' }}
+
                     >
                       Weighted Total
                     </th>
@@ -609,6 +649,7 @@ const Evaluation = () => {
                           </td>
 
 
+                         { teachingFilter && <>
                           <td className="px-4 py-4 whitespace-nowrap text-sm text-gray-500 dark:text-gray-300">
                               {row.studentEvaluation}
                           </td>
@@ -628,8 +669,9 @@ const Evaluation = () => {
                           <td className="px-4 py-4 whitespace-nowrap font-extrabold text-sm text-yellow-50 dark:text-gray-300">
                               {row.overall}
                           </td>
-
-                          { reserachCategory && (<>
+                          </>
+                              }
+                          { reserachCategory && researchFilter && (<>
                           <td className="px-4 py-4 whitespace-nowrap text-sm text-gray-500 dark:text-gray-300">
                               {row.publications}
                           </td>
@@ -652,7 +694,7 @@ const Evaluation = () => {
                           </>)}
 
 
-                            {serviceCategory && (<>
+                            {serviceCategory && serviceFilter && (<>
                           <td className="px-4 py-4 whitespace-nowrap text-sm text-gray-500 dark:text-gray-300">
                               {row.internal}
                           </td>
@@ -801,7 +843,7 @@ const Evaluation = () => {
 
                                 
 
-                                <td className="py-4 px-4 whitespace-nowrap">
+                              { teachingFilter && <>  <td className="py-4 px-4 whitespace-nowrap">
                                   <input
                                     type="number"
                                     min={0}
@@ -869,8 +911,10 @@ const Evaluation = () => {
                                     }}
                                   />
                                 </td>
+                                </>
+                                }
 
-                                {reserachCategory && <>
+                                {reserachCategory && researchFilter && <>
                                   <td className="py-4 px-4 whitespace-nowrap">
                                     <input
                                       type="number"
@@ -940,7 +984,7 @@ const Evaluation = () => {
                                   </td>
                                 </>}
 
-                                { serviceCategory && <>
+                                { serviceCategory && serviceFilter && <>
                                   <td className="py-4 px-4 whitespace-nowrap">
                                     <input
                                       type="number"

@@ -112,6 +112,10 @@
   @apply bg-gray-900 bg-opacity-95
 }
 
+.evalutionWeighted{
+  @apply bg-gray-900 
+}
+
 .weighedTotal{
   background-color: #000000 !important; 
 }
