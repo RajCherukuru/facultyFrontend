@@ -209,8 +209,8 @@ const Evaluation = () => {
   const [serviceFilter, setServiceFilter]= useState(false);
 
 
-  function handleCategoryChange(e){
-    const value= e.target.value;
+  function handleCategoryChange(value){
+    
     if(value == "Teaching"){
       setTeachingFilter(true);
       setResearchFilter(false);
@@ -244,9 +244,9 @@ const Evaluation = () => {
 
         <div className="flex flex-col gap-2">
 
-        <div className="flex gap-5 place-items-center">
+        <div className="flex gap-5 place-items-center ">
           <label className=" label-font">Select Professor Rank:</label>
-          <select className="select-font text-black" onChange={handleRankChange}>
+          <select className=" rounded-md bg-indigo-600 px-3.5 py-1.5 h-10 text-sm font-semibold leading-7 text-white hover:bg-indigo-500" onChange={handleRankChange}>
             <option value="Assistant Professor">Assistant Professor</option>
             <option value="Associate Professor">Associate Professor</option>
             <option value="Professor">Professor</option>
@@ -254,11 +254,11 @@ const Evaluation = () => {
             <option value="Teaching Faculty">Teaching Faculty</option>
           </select>
 
-          <select className="select-font text-black" onChange={handleCategoryChange}>
+          {/* <select className="select-font text-black" onChange={handleCategoryChange}>
             <option value="Teaching">Teaching</option>
             <option value="Research">Research</option>
             <option value="Service">Service</option>
-          </select>
+          </select> */}
 
 
         </div>
@@ -271,6 +271,20 @@ const Evaluation = () => {
           Additional Materials</a>
             </div>
 
+        </div>
+
+
+
+        <div className="flex gap-5 ">
+        <button onClick={()=>handleCategoryChange("Teaching")} className="rounded-md bg-indigo-600 px-3.5 py-1.5 text-sm font-semibold leading-7 text-white hover:bg-indigo-500 ">
+                Teaching
+              </button>
+              <button onClick={()=>handleCategoryChange("Research")} className="rounded-md bg-indigo-600 px-3.5 py-1.5 text-sm font-semibold leading-7 text-white hover:bg-indigo-500 ">
+                Research
+              </button>
+              <button onClick={()=>handleCategoryChange("Service")} className="rounded-md bg-indigo-600 px-3.5 py-1.5 text-sm font-semibold leading-7 text-white hover:bg-indigo-500 ">
+                Service
+              </button>
         </div>
           
           
@@ -426,7 +440,7 @@ const Evaluation = () => {
                         scope="col"
                         className="px-4 py-3.5 text-sm font-normal text-left rtl:text-right text-gray-500 dark:text-gray-400"
                       >
-                        Course/program/teaching lab improvement
+                        Courses
                       </th>
 
 
@@ -631,7 +645,7 @@ const Evaluation = () => {
                               {row.currentRank}
                           </td>
 
-                          <td className="px-4 py-4 whitespace-nowrap text-sm text-gray-500 dark:text-gray-300">
+                          <td className="px-4 py-4 w-12 overflow-hidden text-sm text-gray-500 dark:text-gray-300">
                               {row.startingAsu}
                           </td>
 
@@ -844,7 +858,7 @@ const Evaluation = () => {
                                 
 
                               { teachingFilter && <>  <td className="py-4 px-4 whitespace-nowrap">
-                                  <input
+                                  <input className="w-20"
                                     type="number"
                                     min={0}
                                     max={4}
@@ -859,7 +873,7 @@ const Evaluation = () => {
                                 </td>
 
                                 <td className="py-4 px-4 whitespace-nowrap">
-                                  <input
+                                  <input className="w-20"
                                     type="number"
                                     min={0}
                                     max={4}
@@ -874,7 +888,7 @@ const Evaluation = () => {
                                 </td>
 
                                 <td className="py-4 px-4 whitespace-nowrap">
-                                  <input
+                                  <input className="w-20"
                                     type="number"
                                     min={0}
                                     max={4}
@@ -898,7 +912,7 @@ const Evaluation = () => {
                                 </td>
 
                                 <td className="py-4 px-4 whitespace-nowrap">
-                                  <input
+                                  <input className="w-20"
                                     type="number"
                                     min={0}
                                     max={4}
@@ -916,7 +930,7 @@ const Evaluation = () => {
 
                                 {reserachCategory && researchFilter && <>
                                   <td className="py-4 px-4 whitespace-nowrap">
-                                    <input
+                                    <input className="w-20"
                                       type="number"
                                       min={0}
                                       max={4}
@@ -931,7 +945,7 @@ const Evaluation = () => {
                                   </td>
 
                                   <td className="py-4 px-4 whitespace-nowrap">
-                                    <input
+                                    <input className="w-20"
                                       type="number"
                                       min={0}
                                       max={4}
@@ -946,7 +960,7 @@ const Evaluation = () => {
                                   </td>
 
                                   <td className="py-4 px-4 whitespace-nowrap">
-                                    <input
+                                    <input className="w-20"
                                       type="number"
                                       min={0}
                                       max={4}
@@ -969,7 +983,7 @@ const Evaluation = () => {
                                   </td>
 
                                   <td className="py-4 px-4 whitespace-nowrap">
-                                    <input
+                                    <input className="w-20"
                                       type="number"
                                       min={0}
                                       max={4}
@@ -986,7 +1000,7 @@ const Evaluation = () => {
 
                                 { serviceCategory && serviceFilter && <>
                                   <td className="py-4 px-4 whitespace-nowrap">
-                                    <input
+                                    <input className="w-20"
                                       type="number"
                                       min={0}
                                       max={4}
@@ -1001,7 +1015,7 @@ const Evaluation = () => {
                                   </td>
 
                                   <td className="py-4 px-4 whitespace-nowrap">
-                                    <input
+                                    <input className="w-20"
                                       type="number"
                                       min={0}
                                       max={4}
@@ -1024,7 +1038,7 @@ const Evaluation = () => {
                                   </td>
 
                                   <td className="py-4 px-4 whitespace-nowrap">
-                                    <input
+                                    <input className="w-20"
                                       type="number"
                                       min={0}
                                       max={4}

@@ -223,7 +223,7 @@ const Assignments = () => {
           
         <div className="flex gap-5 place-items-center">
           <label   className="label-font">Select Professor Rank:</label>
-          <select className={`select-font text-black `} onChange={handleRankChange}>
+          <select className=" rounded-md bg-indigo-600 px-3.5 py-1.5 h-10 text-sm font-semibold leading-7 text-white hover:bg-indigo-500"  onChange={handleRankChange}>
             <option value="Assistant Professor">Assistant Professor</option>
             <option value="Associate Professor">Associate Professor</option>
             <option value="Professor">Professor</option>
