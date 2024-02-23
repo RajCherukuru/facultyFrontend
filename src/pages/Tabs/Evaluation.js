@@ -242,7 +242,7 @@ const Evaluation = () => {
 
 
 
-        <div className="flex flex-col gap-2">
+        <div className="flex flex-col gap-2 place">
 
         <div className="flex gap-5 place-items-center ">
           <label className=" label-font">Select Professor Rank:</label>
@@ -275,7 +275,7 @@ const Evaluation = () => {
 
 
 
-        <div className="flex gap-5 ">
+        <div className="flex gap-5 mx-auto ">
         <button onClick={()=>handleCategoryChange("Teaching")} className="rounded-md bg-indigo-600 px-3.5 py-1.5 text-sm font-semibold leading-7 text-white hover:bg-indigo-500 ">
                 Teaching
               </button>
