@@ -7,6 +7,7 @@ import { FcUndo } from "react-icons/fc";
 import { toaster } from "toaster-js/Toaster";
 import toast from "react-hot-toast";
 import { committee_api, committeeid_api, deletecommittee_api, roundrobin_api, updateassignment_api, updatecommittee_api } from "../../services/apis";
+import { RowColour } from "../../utils/RowColour";
 
 
 
@@ -15,6 +16,9 @@ const Committee = () => {
   const [data, setData] = useState([]);
 
   const {user}= useSelector( (state) => state.profile);
+
+  const {colour}= useSelector( (state) => state.colour);
+
 
 
   const [name, setName]= useState("");
@@ -64,7 +68,7 @@ const Committee = () => {
     try {
         await axios.put(`${updatecommittee_api}/${id}`, {name, email, rank, year});
       setEditId(-1);
-      window.location.reload();
+      await fetchData();
       } catch (error) {
         console.log(error);
       }
@@ -77,7 +81,7 @@ const Committee = () => {
     try {
       await axios.post(`${deletecommittee_api}/${id}`);
     setEditId(-1);
-    window.location.reload();
+    await fetchData();
     } catch (error) {
       console.log(error);
     }
@@ -174,7 +178,7 @@ const Committee = () => {
 
 
 
-                  <thead className="bg-gray-50 dark:bg-gray-800 sticky-thead ">
+                  <thead className={`bg-gray-50 dark:bg-gray-800 sticky-thead ${colour==="dark"? "color": "color-light"}`}>
                     <tr>
                       <th
                         scope="col"
@@ -225,27 +229,27 @@ const Committee = () => {
 
                             row._id!== editId ?
 
-                         <tr key={row._id} className={index % 2 === 0 ? 'bg-richblack-900' :  'bg-gray-800'}>
+                         <tr key={row._id} className={RowColour(colour, index)}>
 
-                                    <td className="py-4 px-4 text-gray-500 dark:text-gray-300 whitespace-nowrap sticky-col">
+                                    <td className={`py-4 px-4 whitespace-nowrap   ${colour==="dark"? "sticky-col" : "sticky-col-light"}`}>
                                 {row.name}
                                 </td>
 
 
-                                <td className="px-12 py-4 text-gray-500 dark:text-gray-300 whitespace-nowrap">
+                                <td className="px-12 py-4   whitespace-nowrap">
                                 {row.email}
                                 </td>
 
 
-                                <td className="px-4 py-4 whitespace-nowrap text-sm text-gray-500 dark:text-gray-300">
+                                <td className="px-4 py-4 whitespace-nowrap text-sm  ">
                                 {row.currentRank}
                                 </td>
 
-                                {/* <td className="px-4 py-4 whitespace-nowrap text-sm text-gray-500 dark:text-gray-300">
+                                {/* <td className="px-4 py-4 whitespace-nowrap text-sm  ">
                                 {row.academicYear}
                                 </td> */}
 
-                                { user !== "Committee" && <td className="px-4 py-4 whitespace-nowrap text-sm text-gray-500 dark:text-gray-300 ">
+                                { user !== "Committee" && <td className="px-4 py-4 whitespace-nowrap text-sm   ">
                                 <div className="flex gap-3">
                                     <button onClick={()=>handleEdit(row._id)}>edit</button>
                                     <button onClick={()=>handleDelete(row._id)}>delete</button>
@@ -256,9 +260,9 @@ const Committee = () => {
 
                         :
 
-                        <tr key={row._id} className={index % 2 === 0 ? 'bg-richblack-900' :  'bg-gray-800'}>
+                        <tr key={row._id} className={RowColour(colour, index)}>
 
-                                <td className="py-4 px-4 whitespace-nowrap sticky-col  ">
+                                <td className={`py-4 px-4 whitespace-nowrap   ${colour==="dark"? "sticky-col" : "sticky-col-light"}`}>
 
 
                                 {/* <select onChange={(e)=>setName(e.target.value)}>
@@ -300,11 +304,11 @@ const Committee = () => {
 
                                 </td>
 
-                                {/* <td className="px-4 py-4 whitespace-nowrap text-sm text-gray-500 dark:text-gray-300">
+                                {/* <td className="px-4 py-4 whitespace-nowrap text-sm  ">
                                 <input type="text" value={year} onChange={(e)=>setYear(e.target.value)}></input>
                                 </td> */}
 
-                                <td className="px-4 py-4 whitespace-nowrap text-sm text-gray-500 dark:text-gray-300 ">
+                                <td className="px-4 py-4 whitespace-nowrap text-sm   ">
                                 <div className="flex gap-3">
                                     <button onClick={()=>handleUpdate(row._id)}>update</button>
                                 </div>

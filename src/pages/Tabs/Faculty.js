@@ -4,7 +4,7 @@ import axios from "axios";
 import { useSelector } from "react-redux";
 import profileSlice from "../../Components/reducer/slices/profileSlice";
 import { deletefaculty_api, faculty_api, facultyid_api, updatefaculty_api } from "../../services/apis";
-
+import { RowColour } from "../../utils/RowColour";
 
 
 
@@ -14,6 +14,9 @@ const Faculty = () => {
   const {user}= useSelector( (state) => state.profile);
 
   const [editId, setEditId] = useState(-1);
+
+  const {colour}= useSelector( (state) => state.colour);
+
 
   const [name, setName] = useState("");
   const [link, setLink] = useState("");
@@ -199,14 +202,14 @@ const Faculty = () => {
 
 
 
-                  <thead className="bg-gray-50 dark:bg-gray-800 sticky-thead ">
+                  <thead className= {`bg-gray-50 dark:bg-gray-800 sticky-thead ${colour==="dark"? "color": "color-light"}`}>
                     <tr>
 
 
 
                       <th
                         scope="col"
-                        className="py-3.5 px-4 text-lg font-normal text-left rtl:text-right text-gray-500 dark:text-gray-400"
+                        className="py-3.5 px-4 text-lg font-normal text-left rtl:text-right   "
                       >
                         <span>Name</span>
                       </th>
@@ -214,7 +217,7 @@ const Faculty = () => {
 
                       <th
                         scope="col"
-                        className="px-4 py-3.5 text-lg font-normal text-left rtl:text-right text-gray-500 dark:text-gray-400"
+                        className="px-4 py-3.5 text-lg font-normal text-left rtl:text-right   "
                       >
                         Current Rank
                       </th>
@@ -223,7 +226,7 @@ const Faculty = () => {
 
                       <th
                         scope="col"
-                        className="px-12 py-3.5 text-lg font-normal text-left rtl:text-right text-gray-500 dark:text-gray-400"
+                        className="px-12 py-3.5 text-lg font-normal text-left rtl:text-right   "
                       >
                         Starting ASU
                       </th>
@@ -232,7 +235,7 @@ const Faculty = () => {
 
                       <th
                         scope="col"
-                        className="px-4 py-3.5 text-lg font-normal text-left rtl:text-right text-gray-500 dark:text-gray-400"
+                        className="px-4 py-3.5 text-lg font-normal text-left rtl:text-right   "
                       >
                         Teaching
                       </th>
@@ -240,7 +243,7 @@ const Faculty = () => {
 
                       <th
                         scope="col"
-                        className="px-4 py-3.5 text-lg font-normal text-left rtl:text-right text-gray-500 dark:text-gray-400"
+                        className="px-4 py-3.5 text-lg font-normal text-left rtl:text-right   "
                       >
                         Research
                       </th>
@@ -249,7 +252,7 @@ const Faculty = () => {
 
                       <th
                         scope="col"
-                        className="px-4 py-3.5 text-lg font-normal text-left rtl:text-right text-gray-500 dark:text-gray-400">
+                        className="px-4 py-3.5 text-lg font-normal text-left rtl:text-right   ">
                         Service
                       </th>
 
@@ -257,7 +260,7 @@ const Faculty = () => {
 
                       <th
                         scope="col"
-                        className="px-4 py-3.5 text-lg font-normal text-left rtl:text-right text-gray-500 dark:text-gray-400"
+                        className="px-4 py-3.5 text-lg font-normal text-left rtl:text-right   "
                       >
                         Actions
                       </th>
@@ -299,44 +302,43 @@ const Faculty = () => {
 
 
 
-
                   <tbody className="bg-white divide-y divide-gray-200 dark:divide-gray-700 dark:bg-gray-900">
                     {
                         data.map((row, index) =>(
 
                             row._id!== editId ?
 
-                         <tr key={row._id} className={index % 2 === 0 ? 'bg-richblack-900' :  'bg-gray-800'}>
+                         <tr key={row._id} className={RowColour(colour, index)}>
 
-                         <td className="py-4 px-4 whitespace-nowrap   text-gray-500 dark:text-gray-300 sticky-col">
+                         <td className={`py-4 px-4 whitespace-nowrap   ${colour==="dark"? "sticky-col" : "sticky-col-light"}`}>
                               <a className="text-blue-600 underline" href={row.link} target="_blank">{row.name}</a>
                           </td>
 
-                          <td className="px-4 py-4 whitespace-nowrap text-lg text-gray-500 dark:text-gray-300">
+                          <td className="px-4 py-4 whitespace-nowrap text-lg  ">
                               {row.currentRank}
                           </td>
 
-                          <td className="px-4 py-4 whitespace-nowrap text-lg text-gray-500 dark:text-gray-300">
+                          <td className="px-4 py-4 whitespace-nowrap text-lg  ">
                               {row.startDate}
                           </td>
 
-                          <td className="px-4 py-4 whitespace-nowrap text-lg text-gray-500 dark:text-gray-300">
+                          <td className="px-4 py-4 whitespace-nowrap text-lg  ">
                               {row.teaching}
                           </td>
 
                           {/* row.teaching !== undefined ? row.teaching : "0" */}
 
 
-                          <td className="px-4 py-4 whitespace-nowrap text-lg text-gray-500 dark:text-gray-300">
+                          <td className="px-4 py-4 whitespace-nowrap text-lg  ">
                               {row.research}
                           </td>
 
-                         <td className="px-4 py-4 whitespace-nowrap text-lg text-gray-500 dark:text-gray-300">
+                         <td className="px-4 py-4 whitespace-nowrap text-lg  ">
                               {row.service}
                           </td>
 
 
-                                <td className="px-4 py-4 whitespace-nowrap text-lg text-gray-500 dark:text-gray-300 ">
+                                <td className="px-4 py-4 whitespace-nowrap text-lg   ">
                                 <div className="flex gap-3">
                                     <button onClick={()=>handleEdit(row._id)}>edit</button>
                                     <button onClick={()=>handleDelete(row._id)}>delete</button>
@@ -389,9 +391,9 @@ const Faculty = () => {
 
 
 
-                        <tr key={row._id}  className={index % 2 === 0 ? 'bg-richblack-900' :  'bg-gray-800'}>
+                        <tr key={row._id}  className={RowColour(colour, index)}>
 
-                            <td className="py-4 px-4 whitespace-nowrap flex gap-2 ">
+                            <td className={`py-4 px-4 whitespace-nowrap   ${colour==="dark"? "sticky-col" : "sticky-col-light"}`}>
 
                               <input
                                 type="text"
@@ -466,7 +468,7 @@ const Faculty = () => {
                             </td>
 
 
-                            <td className="px-4 py-4 whitespace-nowrap text-lg text-gray-500 dark:text-gray-300 ">
+                            <td className="px-4 py-4 whitespace-nowrap text-lg   ">
                                 <div className="flex gap-3">
                                     <button onClick={()=>handleUpdate(row._id)}>Update</button>
                                 </div>
@@ -520,7 +522,7 @@ const Faculty = () => {
   //           <h2 className="text-lg font-medium text-gray-800 dark:text-white">
   //           Faculty
   //           </h2>
-  //           <p className="mt-1 text-lg text-gray-500 dark:text-gray-300">
+  //           <p className="mt-1 text-lg  ">
   //             This is a list of all Faculty. You can add new Faculty, edit
   //             or delete existing ones.
   //           </p>
@@ -558,48 +560,48 @@ const Faculty = () => {
   //                   <tr>
   //                     <th
   //                       scope="col"
-  //                       className="py-3.5 px-4 text-lg font-normal text-left rtl:text-right text-gray-500 dark:text-gray-400"
+  //                       className="py-3.5 px-4 text-lg font-normal text-left rtl:text-right   "
   //                     >
   //                       <span>Name</span>
   //                     </th>
   //                     <th
   //                       scope="col"
-  //                       className="px-12 py-3.5 text-lg font-normal text-left rtl:text-right text-gray-500 dark:text-gray-400"
+  //                       className="px-12 py-3.5 text-lg font-normal text-left rtl:text-right   "
   //                     >
   //                       Current Rank
   //                     </th>
 
   //                     <th
   //                       scope="col"
-  //                       className="px-4 py-3.5 text-lg font-normal text-left rtl:text-right text-gray-500 dark:text-gray-400"
+  //                       className="px-4 py-3.5 text-lg font-normal text-left rtl:text-right   "
   //                     >
   //                       Start Date
   //                     </th>
 
   //                     <th
   //                       scope="col"
-  //                       className="px-4 py-3.5 text-lg font-normal text-left rtl:text-right text-gray-500 dark:text-gray-400"
+  //                       className="px-4 py-3.5 text-lg font-normal text-left rtl:text-right   "
   //                     >
   //                       Teaching
   //                     </th>
 
   //                     <th
   //                       scope="col"
-  //                       className="px-4 py-3.5 text-lg font-normal text-left rtl:text-right text-gray-500 dark:text-gray-400"
+  //                       className="px-4 py-3.5 text-lg font-normal text-left rtl:text-right   "
   //                     >
   //                       Research
   //                     </th>
 
   //                     <th
   //                       scope="col"
-  //                       className="px-4 py-3.5 text-lg font-normal text-left rtl:text-right text-gray-500 dark:text-gray-400"
+  //                       className="px-4 py-3.5 text-lg font-normal text-left rtl:text-right   "
   //                     >
   //                       Service
   //                     </th>
 
   //                     <th
   //                       scope="col"
-  //                       className="px-4 py-3.5 text-lg font-normal text-left rtl:text-right text-gray-500 dark:text-gray-400"
+  //                       className="px-4 py-3.5 text-lg font-normal text-left rtl:text-right   "
   //                     >
   //                       Edit Button
   //                     </th>
@@ -607,7 +609,7 @@ const Faculty = () => {
 
   //                     <th
   //                       scope="col"
-  //                       className="px-4 py-3.5 text-lg font-normal text-left rtl:text-right text-gray-500 dark:text-gray-400"
+  //                       className="px-4 py-3.5 text-lg font-normal text-left rtl:text-right   "
   //                     >
   //                       Delete Button
   //                     </th>
@@ -615,7 +617,7 @@ const Faculty = () => {
 
   //                     {/* <th
   //                       scope="col"
-  //                       className="px-4 py-3.5 text-lg font-normal text-left rtl:text-right text-gray-500 dark:text-gray-400"
+  //                       className="px-4 py-3.5 text-lg font-normal text-left rtl:text-right   "
   //                     >
   //                       Notes
   //                     </th> */}
@@ -631,7 +633,7 @@ const Faculty = () => {
   //                     <tr key={row._id}>
 
   //                       <td className="py-4 px-4 whitespace-nowrap">
-  //                         <input value={row.name} className="text-lg text-gray-500 dark:text-gray-300"></input>
+  //                         <input value={row.name} className="text-lg  "></input>
   //                       </td>
 
 
@@ -640,35 +642,35 @@ const Faculty = () => {
   //                       </td>
 
 
-  //                       <td className="px-4 py-4 whitespace-nowrap text-lg text-gray-500 dark:text-gray-300">
+  //                       <td className="px-4 py-4 whitespace-nowrap text-lg  ">
   //                         {row.startDate}
   //                       </td>
 
-  //                       <td className="px-4 py-4 whitespace-nowrap text-lg text-gray-500 dark:text-gray-300">
+  //                       <td className="px-4 py-4 whitespace-nowrap text-lg  ">
   //                         {row.teaching}
   //                       </td>
 
-  //                       <td className="px-4 py-4 whitespace-nowrap text-lg text-gray-500 dark:text-gray-300">
+  //                       <td className="px-4 py-4 whitespace-nowrap text-lg  ">
   //                         {row.research}
   //                       </td>
 
-  //                       <td className="px-4 py-4 whitespace-nowrap text-lg text-gray-500 dark:text-gray-300">
+  //                       <td className="px-4 py-4 whitespace-nowrap text-lg  ">
   //                         {row.service}
   //                       </td>
 
-  //                       <td className="px-4 py-4 whitespace-nowrap text-lg text-gray-500 dark:text-gray-300 cursor-pointer">
+  //                       <td className="px-4 py-4 whitespace-nowrap text-lg   cursor-pointer">
   //                         <button>
   //                           Edit/submit
   //                         </button>
   //                       </td>
 
-  //                       <td className="px-4 py-4 whitespace-nowrap text-lg text-gray-500 dark:text-gray-300 cursor-pointer">
+  //                       <td className="px-4 py-4 whitespace-nowrap text-lg   cursor-pointer">
   //                         <button onClick={()=>deleteButton(row._id)}>
   //                           Delete
   //                         </button>
   //                       </td>
 
-  //                       {/* <td className="px-4 py-4 whitespace-nowrap text-lg text-gray-500 dark:text-gray-300">
+  //                       {/* <td className="px-4 py-4 whitespace-nowrap text-lg  ">
   //                         {row.notes}
   //                       </td> */}
 

@@ -5,6 +5,7 @@ import authSlice from "../../Components/reducer/slices/authSlice";
 import { useSelector } from "react-redux";
 import profileSlice from "../../Components/reducer/slices/profileSlice";
 import { assignmentid_api, deleteassignment_api, filterevaluation_api, updateassignment_api } from "../../services/apis";
+import { RowColour } from "../../utils/RowColour";
 
 
 const Evaluation = () => {
@@ -13,6 +14,10 @@ const Evaluation = () => {
 
   const {token}= useSelector( (state) => state.auth);
   const {user}= useSelector( (state) => state.profile);
+
+  const {colour}= useSelector( (state) => state.colour);
+
+  
 
 
 
@@ -314,7 +319,7 @@ const Evaluation = () => {
 
 
 
-                <thead className="bg-gray-50 dark:bg-gray-800 actual-head">
+                <thead className={` ${colour==="dark" ? "actual-head": "actual-head-light" } `}>
                     <tr>
 
 
@@ -322,7 +327,7 @@ const Evaluation = () => {
                       <th
                         scope="col"
                         colSpan="6"
-                        className="py-3.5 px-4 text-sm font-normal border-2  text-center rtl:text-right text-gray-500 dark:text-gray-400"
+                        className="py-3.5 px-4 text-sm font-normal border-2  text-center rtl:text-right "
                       >
                         <span>Faculty Information</span>
                       </th>
@@ -331,7 +336,7 @@ const Evaluation = () => {
                     { teachingFilter &&  <th
                         scope="col"
                         colSpan="5"
-                        className="px-4 py-3.5 text-sm font-normal border-2  text-center rtl:text-right text-gray-500 dark:text-gray-400"
+                        className="px-4 py-3.5 text-sm font-normal border-2  text-center rtl:text-right "
                       >
                         Teaching
                       </th>}
@@ -341,7 +346,7 @@ const Evaluation = () => {
                      reserachCategory && researchFilter &&  <th
                         scope="col"
                         colSpan="5"
-                        className="px-4 py-3.5 text-sm font-normal border-2  text-center rtl:text-right text-gray-500 dark:text-gray-400"
+                        className="px-4 py-3.5 text-sm font-normal border-2  text-center rtl:text-right "
                       >
                         Research
                       </th>}
@@ -351,7 +356,7 @@ const Evaluation = () => {
                     {serviceCategory && serviceFilter && <th
                       scope="col"
                       colSpan="4"
-                      className="px-4 py-3.5 text-sm font-normal border-2  text-center rtl:text-right text-gray-500 dark:text-gray-400"
+                      className="px-4 py-3.5 text-sm font-normal border-2  text-center rtl:text-right "
                     >
                       Service
                     </th>}
@@ -359,7 +364,7 @@ const Evaluation = () => {
                     <th
                         scope="col"
                         colSpan="2"
-                        className="px-4 py-3.5 text-sm font-normal border-2  text-center rtl:text-right text-gray-500 dark:text-gray-400"
+                        className="px-4 py-3.5 text-sm font-normal border-2  text-center rtl:text-right "
                       >
                         Results
                       </th>
@@ -371,14 +376,14 @@ const Evaluation = () => {
 
 
 
-                  <thead className="bg-gray-50 dark:bg-gray-800 sticky-thead color">
+                  <thead className={`bg-gray-50 dark:bg-gray-800 sticky-thead ${colour==="dark"? "color": "color-light"}`}>
                     <tr>
 
 
 
                       <th
                         scope="col"
-                        className="py-3.5 px-4 text-sm font-normal text-left rtl:text-right text-gray-500 dark:text-gray-400"
+                        className="py-3.5 px-4 text-sm font-normal text-left rtl:text-right   "
                       >
                         <span>Name</span>
                       </th>
@@ -386,7 +391,7 @@ const Evaluation = () => {
 
                       <th
                         scope="col"
-                        className="px-4 py-3.5 text-sm font-normal text-left rtl:text-right text-gray-500 dark:text-gray-400"
+                        className="px-4 py-3.5 text-sm font-normal text-left rtl:text-right   "
                       >
                         Current Rank
                       </th>
@@ -395,7 +400,7 @@ const Evaluation = () => {
 
                       <th
                         scope="col"
-                        className="px-12 py-3.5 text-sm font-normal text-left rtl:text-right text-gray-500 dark:text-gray-400"
+                        className="px-12 py-3.5 text-sm font-normal text-left rtl:text-right   "
                       >
                         Starting ASU
                       </th>
@@ -404,7 +409,7 @@ const Evaluation = () => {
 
                       <th
                         scope="col"
-                        className="px-4 py-3.5 text-sm font-normal text-left rtl:text-right text-gray-500 dark:text-gray-400"
+                        className="px-4 py-3.5 text-sm font-normal text-left rtl:text-right   "
                       >
                         Teaching
                       </th>
@@ -412,7 +417,7 @@ const Evaluation = () => {
 
                      <th
                         scope="col"
-                        className="px-4 py-3.5 text-sm font-normal text-left rtl:text-right text-gray-500 dark:text-gray-400"
+                        className="px-4 py-3.5 text-sm font-normal text-left rtl:text-right   "
                       >
                         Research
                       </th>
@@ -421,7 +426,7 @@ const Evaluation = () => {
 
                      <th
                         scope="col"
-                        className="px-4 py-3.5 text-sm font-normal text-left rtl:text-right text-gray-500 dark:text-gray-400"
+                        className="px-4 py-3.5 text-sm font-normal text-left rtl:text-right   "
                       >
                         Service
                       </th>
@@ -430,7 +435,7 @@ const Evaluation = () => {
                      { teachingFilter && <>
                      <th
                         scope="col"
-                        className="py-3.5 px-4 text-sm font-normal text-left rtl:text-right text-gray-500 dark:text-gray-400"
+                        className="py-3.5 px-4 text-sm font-normal text-left rtl:text-right   "
                       >
                         <span>Student Evaluation</span>
                       </th>
@@ -438,7 +443,7 @@ const Evaluation = () => {
 
                       <th
                         scope="col"
-                        className="px-4 py-3.5 text-sm font-normal text-left rtl:text-right text-gray-500 dark:text-gray-400"
+                        className="px-4 py-3.5 text-sm font-normal text-left rtl:text-right   "
                       >
                         Courses
                       </th>
@@ -447,7 +452,7 @@ const Evaluation = () => {
 
                       <th
                         scope="col"
-                        className="px-12 py-3.5 text-sm font-normal text-left rtl:text-right text-gray-500 dark:text-gray-400"
+                        className="px-12 py-3.5 text-sm font-normal text-left rtl:text-right   "
                       >
                         Students mentoring
                       </th>
@@ -456,7 +461,7 @@ const Evaluation = () => {
 
                       <th
                         scope="col"
-                        className="px-4 py-3.5 text-sm font-normal text-left rtl:text-right text-gray-500 dark:text-gray-400"
+                        className="px-4 py-3.5 text-sm font-normal text-left rtl:text-right   "
                       >
                         Notes
                       </th>
@@ -465,7 +470,7 @@ const Evaluation = () => {
 
                       <th
                         scope="col"
-                        className="py-3.5  px-4 text-sm font-normal text-left rtl:text-right text-gray-500 dark:text-gray-400"
+                        className="py-3.5  px-4 text-sm font-normal text-left rtl:text-right   "
                       >
                         <span className="font-extrabold text-yellow-50">Overall</span>
                       </th>
@@ -478,7 +483,7 @@ const Evaluation = () => {
                        reserachCategory && researchFilter && (<>
                       <th
                         scope="col"
-                        className="px-4 py-3.5 text-sm font-normal text-left rtl:text-right text-gray-500 dark:text-gray-400"
+                        className="px-4 py-3.5 text-sm font-normal text-left rtl:text-right   "
                       >
                         Publications/ Other IP
                       </th>
@@ -487,7 +492,7 @@ const Evaluation = () => {
 
                       <th
                         scope="col"
-                        className="px-12 py-3.5 text-sm font-normal text-left rtl:text-right text-gray-500 dark:text-gray-400"
+                        className="px-12 py-3.5 text-sm font-normal text-left rtl:text-right   "
                       >
                         Research funding
                       </th>
@@ -496,7 +501,7 @@ const Evaluation = () => {
 
                       <th
                         scope="col"
-                        className="px-4 py-3.5 text-sm font-normal text-left rtl:text-right text-gray-500 dark:text-gray-400"
+                        className="px-4 py-3.5 text-sm font-normal text-left rtl:text-right   "
                       >
                         PhD students mentoring
                       </th>
@@ -504,7 +509,7 @@ const Evaluation = () => {
 
                       <th
                         scope="col"
-                        className="py-3.5 px-4 text-sm font-normal text-left rtl:text-right text-gray-500 dark:text-gray-400"
+                        className="py-3.5 px-4 text-sm font-normal text-left rtl:text-right   "
                       >
                         <span>Notes</span>
                       </th>
@@ -524,7 +529,7 @@ const Evaluation = () => {
 
                       <th
                         scope="col"
-                        className="px-12 py-3.5 text-sm font-normal text-left rtl:text-right text-gray-500 dark:text-gray-400"
+                        className="px-12 py-3.5 text-sm font-normal text-left rtl:text-right   "
                       >
                         Internal
                       </th>
@@ -533,14 +538,14 @@ const Evaluation = () => {
 
                       <th
                         scope="col"
-                        className="px-4 py-3.5 text-sm font-normal text-left rtl:text-right text-gray-500 dark:text-gray-400"
+                        className="px-4 py-3.5 text-sm font-normal text-left rtl:text-right   "
                       >
                         External
                       </th>
 
                       <th
                         scope="col"
-                        className="px-12 py-3.5 text-sm font-normal text-left rtl:text-right text-gray-500 dark:text-gray-400"
+                        className="px-12 py-3.5 text-sm font-normal text-left rtl:text-right   "
                       >
                         Notes
                       </th>
@@ -568,7 +573,7 @@ const Evaluation = () => {
 
                       {/* <th
                         scope="col"
-                        className="px-4 py-3.5 text-sm font-normal text-left rtl:text-right text-gray-500 dark:text-gray-400"
+                        className="px-4 py-3.5 text-sm font-normal text-left rtl:text-right   "
                       >
                         Assignment
                       </th> */}
@@ -586,7 +591,7 @@ const Evaluation = () => {
 
                       <th
                         scope="col"
-                        className="px-4 py-3.5 text-sm font-normal text-left rtl:text-right text-gray-500 dark:text-gray-400"
+                        className="px-4 py-3.5 text-sm font-normal text-left rtl:text-right   "
                       >
                         Actions
                       </th>
@@ -635,48 +640,48 @@ const Evaluation = () => {
 
                             row._id!== editId ?
 
-                         <tr key={row._id} className={index % 2 === 0 ? 'bg-richblack-900' :  'bg-gray-800'}>
+                         <tr key={row._id} className={RowColour(colour, index)}>
 
-                         <td className="py-4 px-4 whitespace-nowrap text-gray-500 dark:text-gray-300 sticky-col">
+                         <td className={`py-4 px-4 whitespace-nowrap   ${colour==="dark"? "sticky-col" : "sticky-col-light"}`}>
                          <a className="text-blue-600 underline" href={row.link} target="_blank">{row.name}</a>
                           </td>
 
-                          <td className="px-4 py-4 whitespace-nowrap text-sm text-gray-500 dark:text-gray-300">
+                          <td className="px-4 py-4 whitespace-nowrap text-sm  ">
                               {row.currentRank}
                           </td>
 
-                          <td className="px-4 py-4 w-12 overflow-hidden text-sm text-gray-500 dark:text-gray-300">
+                          <td className="px-4 py-4 w-12 overflow-hidden text-sm  ">
                               {row.startingAsu}
                           </td>
 
-                          <td className="px-4 py-4 whitespace-nowrap text-sm text-gray-500 dark:text-gray-300">
+                          <td className="px-4 py-4 whitespace-nowrap text-sm  ">
                               {row.teaching}
                           </td>
 
 
-                           <td className="px-4 py-4 whitespace-nowrap text-sm text-gray-500 dark:text-gray-300">
+                           <td className="px-4 py-4 whitespace-nowrap text-sm  ">
                               {row.research}
                           </td>
 
-                          <td className="px-4 py-4 whitespace-nowrap text-sm text-gray-500 dark:text-gray-300">
+                          <td className="px-4 py-4 whitespace-nowrap text-sm  ">
                               {row.service}
                           </td>
 
 
                          { teachingFilter && <>
-                          <td className="px-4 py-4 whitespace-nowrap text-sm text-gray-500 dark:text-gray-300">
+                          <td className="px-4 py-4 whitespace-nowrap text-sm  ">
                               {row.studentEvaluation}
                           </td>
 
-                          <td className="px-4 py-4 whitespace-nowrap text-sm text-gray-500 dark:text-gray-300">
+                          <td className="px-4 py-4 whitespace-nowrap text-sm  ">
                               {row.course}
                           </td>
 
-                          <td className="px-4 py-4 whitespace-nowrap text-sm text-gray-500 dark:text-gray-300">
+                          <td className="px-4 py-4 whitespace-nowrap text-sm  ">
                               {row.teachingStudentMentor}
                           </td>
 
-                          <td className="px-4 py-4  text-sm text-gray-500 dark:text-gray-300">
+                          <td className="px-4 py-4  text-sm  ">
                               <div className="h-16 overflow-hidden hover:h-full">{row.notes}</div>
                           </td>
 
@@ -686,19 +691,19 @@ const Evaluation = () => {
                           </>
                               }
                           { reserachCategory && researchFilter && (<>
-                          <td className="px-4 py-4 whitespace-nowrap text-sm text-gray-500 dark:text-gray-300">
+                          <td className="px-4 py-4 whitespace-nowrap text-sm  ">
                               {row.publications}
                           </td>
 
-                          <td className="px-4 py-4 whitespace-nowrap text-sm text-gray-500 dark:text-gray-300">
+                          <td className="px-4 py-4 whitespace-nowrap text-sm  ">
                               {row.researchFunding}
                           </td>
 
-                          <td className="px-4 py-4 whitespace-nowrap text-sm text-gray-500 dark:text-gray-300">
+                          <td className="px-4 py-4 whitespace-nowrap text-sm  ">
                               {row.researchStudentMentor}
                           </td>
 
-                          <td className="px-4 py-4  text-sm text-gray-500 dark:text-gray-300">
+                          <td className="px-4 py-4  text-sm  ">
                           <div className="h-16 overflow-hidden hover:h-full">{row.notes2}</div>
                           </td>
 
@@ -709,15 +714,15 @@ const Evaluation = () => {
 
 
                             {serviceCategory && serviceFilter && (<>
-                          <td className="px-4 py-4 whitespace-nowrap text-sm text-gray-500 dark:text-gray-300">
+                          <td className="px-4 py-4 whitespace-nowrap text-sm  ">
                               {row.internal}
                           </td>
 
-                          <td className="px-4 py-4 whitespace-nowrap text-sm text-gray-500 dark:text-gray-300">
+                          <td className="px-4 py-4 whitespace-nowrap text-sm  ">
                               {row.external}
                           </td>
 
-                          <td className="px-4 py-4 overflow-hidden text-sm text-gray-500 dark:text-gray-300">
+                          <td className="px-4 py-4 overflow-hidden text-sm  ">
                             <div className="h-16 overflow-hidden hover:h-full">{row.notes3}</div>
                           </td>
 
@@ -731,12 +736,12 @@ const Evaluation = () => {
                               {row.weightedTotal}
                           </td>
 
-                          {/* <td className="px-4 py-4 whitespace-nowrap text-sm text-gray-500 dark:text-gray-300">
+                          {/* <td className="px-4 py-4 whitespace-nowrap text-sm  ">
                               {row.assignment}
                           </td> */}
 
 
-                                <td className="px-4 py-4 whitespace-nowrap text-sm text-gray-500 dark:text-gray-300 ">
+                                <td className="px-4 py-4 whitespace-nowrap text-sm   ">
                                 <div className="flex gap-3">
                                     <button onClick={()=>handleEdit(row._id)}>edit</button>
                                     {/* <button onClick={()=>handleDelete(row._id)}>delete</button> */}
@@ -791,19 +796,19 @@ const Evaluation = () => {
 
                        
 
-                        <tr key={row._id} className={`${index % 2 === 0 ? 'bg-richblack-900' : 'bg-gray-800'}`}>
+                        <tr key={row._id} className={RowColour(colour, index)}>
 
 
 
-                        <td className="py-4 px-4 whitespace-nowrap text-gray-500 dark:text-gray-300 sticky-col">
+                        <td className={`py-4 px-4 whitespace-nowrap   ${colour==="dark"? "sticky-col" : "sticky-col-light"}`}>
                               {row.name}
                           </td>
 
-                          <td className="px-4 py-4 whitespace-nowrap text-sm text-gray-500 dark:text-gray-300">
+                          <td className="px-4 py-4 whitespace-nowrap text-sm  ">
                               {row.currentRank}
                           </td>
 
-                          <td className="px-4 py-4 whitespace-nowrap text-sm text-gray-500 dark:text-gray-300">
+                          <td className="px-4 py-4 whitespace-nowrap text-sm  ">
                               {row.startingAsu}
                           </td>
 
@@ -838,16 +843,16 @@ const Evaluation = () => {
                                 
 
 
-                                <td className="px-4 py-4 whitespace-nowrap text-sm text-gray-500 dark:text-gray-300">
+                                <td className="px-4 py-4 whitespace-nowrap text-sm  ">
                                 {row.teaching}
                             </td>
   
   
-                             <td className="px-4 py-4 whitespace-nowrap text-sm text-gray-500 dark:text-gray-300">
+                             <td className="px-4 py-4 whitespace-nowrap text-sm  ">
                                 {row.research}
                             </td>
   
-                            <td className="px-4 py-4 whitespace-nowrap text-sm text-gray-500 dark:text-gray-300">
+                            <td className="px-4 py-4 whitespace-nowrap text-sm  ">
                                 {row.service}
                             </td>
 
@@ -1065,11 +1070,11 @@ const Evaluation = () => {
                             </td> */}
 
 
-                            <td className="px-4 py-4 whitespace-nowrap text-sm text-gray-500 dark:text-gray-300">
+                            <td className="px-4 py-4 whitespace-nowrap text-sm  ">
                               {row.weightedTotal}
                           </td>
 
-                            <td className="px-4 py-4 whitespace-nowrap text-sm text-gray-500 dark:text-gray-300 ">
+                            <td className="px-4 py-4 whitespace-nowrap text-sm   ">
                                 <div className="flex gap-3">
                                     <button onClick={()=>handleUpdate(row._id)}>Update</button>
                                 </div>

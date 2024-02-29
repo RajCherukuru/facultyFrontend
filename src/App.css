@@ -65,6 +65,16 @@
     width: 150px;
   } */
 
+ 
+
+  .table-container {
+    /* height: 500px; 
+    width: 1400px; */
+    height: calc(100vh - 310px);
+   width: calc(100vw - 20px);
+    overflow: auto; 
+  }
+
   .sticky-thead{
     position: sticky;
     top: 0;
@@ -79,36 +89,70 @@
     @apply bg-gray-900 bg-opacity-95
 }
 
+.sticky-col-light {
+  position: sticky;
+  left: 0;
+  z-index: 2;
+  @apply bg-gray-300
+}
 
-  .table-container {
-    /* height: 500px; 
-    width: 1400px; */
-    height: calc(100vh - 310px);
-   width: calc(100vw - 20px);
-    overflow: auto; 
-  }
 
 
   .actual-head th:nth-child(even) {
-    background-color: #000000; /* Set the background color for even elements */
+    @apply bg-richblack-900; /* Set the background color for even elements */
   }
 
   .actual-head th:nth-child(odd) {
     @apply bg-gray-900 bg-opacity-95
   }
 
+  .actual-head-light th:nth-child(even) {
+    @apply bg-white; /* Set the background color for even elements */
+  }
+
+  .actual-head-light th:nth-child(odd) {
+    @apply bg-gray-200 
+  }
+
+
+
+
   
 .color th:nth-child(n+7):nth-child(-n+11),
 .color th:nth-child(n+17):nth-child(-n+20) {
-  background-color: #000000; /* Set the background color for the specified range */
+  @apply bg-richblack-900; /* Set the background color for the specified range */
 }
 
 
 .color th:nth-child(n+1):nth-child(-n+6),
 .color th:nth-child(n+12):nth-child(-n+16),
 .color th:nth-child(n+21):nth-child(-n+22) {
-  @apply bg-gray-900 bg-opacity-95
+  @apply bg-gray-900 
 }
+
+
+.color-light th:nth-child(n+7):nth-child(-n+11),
+.color-light th:nth-child(n+17):nth-child(-n+20) {
+  @apply bg-white; /* Set the background color for the specified range */
+}
+
+
+.color-light th:nth-child(n+1):nth-child(-n+6),
+.color-light th:nth-child(n+12):nth-child(-n+16),
+.color-light th:nth-child(n+21):nth-child(-n+22) {
+  @apply bg-gray-200
+}
+
+
+
+
+
+
+
+
+
+
+
 
 .evalutionWeighted{
   @apply bg-gray-900 

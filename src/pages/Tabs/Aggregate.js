@@ -9,6 +9,7 @@ import jsPDF from 'jspdf';
 // import * as ExportToCsv from 'export-to-csv';
 import { CSVLink } from 'react-csv';
 import { assignmentid_api, deleteassignment_api, filteraggregate_api, updateassignment_api } from "../../services/apis";
+import { RowColour } from "../../utils/RowColour";
 
 
 
@@ -52,6 +53,8 @@ const Aggregate = () => {
   const [serviceCategory, setServiceCategory]= useState(true);
 
   const[avgs, setAvgs]= useState([]);
+
+  const {colour}= useSelector( (state) => state.colour);
 
 
 
@@ -377,7 +380,7 @@ function AllDataHandler(){
 
 
 
-                <thead className="bg-gray-50 dark:bg-gray-800 actual-head ">
+                <thead className={` ${colour==="dark" ? "actual-head": "actual-head-light" } `}>
                     <tr>
 
 
@@ -385,7 +388,7 @@ function AllDataHandler(){
                       <th
                         scope="col"
                         colSpan="6"
-                        className="py-3.5 px-4 text-sm font-normal border-2  text-center rtl:text-right text-gray-500 dark:text-gray-400"
+                        className="py-3.5 px-4 text-sm font-normal border-2  text-center rtl:text-right  "
                       >
                         <span>Faculty Information</span>
                       </th>
@@ -394,7 +397,7 @@ function AllDataHandler(){
                       <th
                         scope="col"
                         colSpan="5"
-                        className="px-4 py-3.5 text-sm font-normal border-2  text-center rtl:text-right text-gray-500 dark:text-gray-400"
+                        className="px-4 py-3.5 text-sm font-normal border-2  text-center rtl:text-right  "
                       >
                         Teaching
                       </th>
@@ -404,7 +407,7 @@ function AllDataHandler(){
                      reserachCategory &&  <th
                         scope="col"
                         colSpan="5"
-                        className="px-4 py-3.5 text-sm font-normal border-2  text-center rtl:text-right text-gray-500 dark:text-gray-400"
+                        className="px-4 py-3.5 text-sm font-normal border-2  text-center rtl:text-right  "
                       >
                         Research
                       </th>}
@@ -414,7 +417,7 @@ function AllDataHandler(){
                     {serviceCategory && <th
                       scope="col"
                       colSpan="4"
-                      className="px-4 py-3.5 text-sm font-normal border-2  text-center rtl:text-right text-gray-500 dark:text-gray-400"
+                      className="px-4 py-3.5 text-sm font-normal border-2  text-center rtl:text-right  "
                     >
                       Service
                     </th>}
@@ -422,7 +425,7 @@ function AllDataHandler(){
                     <th
                         scope="col"
                         colSpan={(user === "Chair") ? "3" : "1"}
-                        className="px-4 py-3.5 text-sm font-normal border-2  text-center rtl:text-right text-gray-500 dark:text-gray-400"
+                        className="px-4 py-3.5 text-sm font-normal border-2  text-center rtl:text-right  "
                       >
                         Results
                       </th>
@@ -434,14 +437,14 @@ function AllDataHandler(){
 
 
 
-                  <thead className="bg-gray-50 dark:bg-gray-800 sticky-thead color">
+                  <thead className={`bg-gray-50 dark:bg-gray-800 sticky-thead ${colour==="dark"? "color": "color-light"}`}>
                     <tr>
 
 
 
                       <th
                         scope="col"
-                        className="py-3.5 px-4 text-sm font-normal text-left rtl:text-right text-gray-500 dark:text-gray-400"
+                        className="py-3.5 px-4 text-sm font-normal text-left rtl:text-right  "
                       >
                         <span>Name</span>
                       </th>
@@ -449,7 +452,7 @@ function AllDataHandler(){
 
                       <th
                         scope="col"
-                        className="px-4 py-3.5 text-sm font-normal text-left rtl:text-right text-gray-500 dark:text-gray-400"
+                        className="px-4 py-3.5 text-sm font-normal text-left rtl:text-right  "
                       >
                         Current Rank
                       </th>
@@ -458,7 +461,7 @@ function AllDataHandler(){
 
                       <th
                         scope="col"
-                        className="px-12 py-3.5 text-sm font-normal text-left rtl:text-right text-gray-500 dark:text-gray-400"
+                        className="px-12 py-3.5 text-sm font-normal text-left rtl:text-right  "
                       >
                         Starting ASU
                       </th>
@@ -467,7 +470,7 @@ function AllDataHandler(){
 
                       <th
                         scope="col"
-                        className="px-4 py-3.5 text-sm font-normal text-left rtl:text-right text-gray-500 dark:text-gray-400"
+                        className="px-4 py-3.5 text-sm font-normal text-left rtl:text-right  "
                       >
                         Teaching
                       </th>
@@ -475,7 +478,7 @@ function AllDataHandler(){
 
                       <th
                         scope="col"
-                        className="px-4 py-3.5 text-sm font-normal text-left rtl:text-right text-gray-500 dark:text-gray-400"
+                        className="px-4 py-3.5 text-sm font-normal text-left rtl:text-right  "
                       >
                         Research
                       </th>
@@ -484,7 +487,7 @@ function AllDataHandler(){
 
                       <th
                         scope="col"
-                        className="px-4 py-3.5 text-sm font-normal text-left rtl:text-right text-gray-500 dark:text-gray-400"
+                        className="px-4 py-3.5 text-sm font-normal text-left rtl:text-right  "
                       >
                         Service
                       </th>
@@ -492,7 +495,7 @@ function AllDataHandler(){
 
                       <th
                         scope="col"
-                        className="py-3.5 px-4 text-sm font-normal text-left rtl:text-right text-gray-500 dark:text-gray-400"
+                        className="py-3.5 px-4 text-sm font-normal text-left rtl:text-right  "
                       >
                         <span>Student Evaluation</span>
                       </th>
@@ -500,7 +503,7 @@ function AllDataHandler(){
 
                       <th
                         scope="col"
-                        className="px-4 py-3.5 text-sm font-normal text-left rtl:text-right text-gray-500 dark:text-gray-400"
+                        className="px-4 py-3.5 text-sm font-normal text-left rtl:text-right  "
                       >
                         Course/program/teaching lab improvement
                       </th>
@@ -509,7 +512,7 @@ function AllDataHandler(){
 
                       <th
                         scope="col"
-                        className="px-12 py-3.5 text-sm font-normal text-left rtl:text-right text-gray-500 dark:text-gray-400"
+                        className="px-12 py-3.5 text-sm font-normal text-left rtl:text-right  "
                       >
                         students mentoring
                       </th>
@@ -518,7 +521,7 @@ function AllDataHandler(){
 
                       <th
                         scope="col"
-                        className="px-4 py-3.5 text-sm font-normal text-left rtl:text-right text-gray-500 dark:text-gray-400"
+                        className="px-4 py-3.5 text-sm font-normal text-left rtl:text-right  "
                       >
                         Notes
                       </th>
@@ -527,7 +530,7 @@ function AllDataHandler(){
 
                       <th
                         scope="col"
-                        className="py-3.5 px-4 text-sm font-normal text-left rtl:text-right text-gray-500 dark:text-gray-400"
+                        className="py-3.5 px-4 text-sm font-normal text-left rtl:text-right  "
                       >
                         <span className="font-extrabold text-yellow-50">Overall</span>
                       </th>
@@ -538,7 +541,7 @@ function AllDataHandler(){
                        reserachCategory && (<>
                       <th
                         scope="col"
-                        className="px-4 py-3.5 text-sm font-normal text-left rtl:text-right text-gray-500 dark:text-gray-400"
+                        className="px-4 py-3.5 text-sm font-normal text-left rtl:text-right  "
                       >
                         Publications/ Other IP
                       </th>
@@ -547,7 +550,7 @@ function AllDataHandler(){
 
                       <th
                         scope="col"
-                        className="px-12 py-3.5 text-sm font-normal text-left rtl:text-right text-gray-500 dark:text-gray-400"
+                        className="px-12 py-3.5 text-sm font-normal text-left rtl:text-right  "
                       >
                         Research funding
                       </th>
@@ -556,7 +559,7 @@ function AllDataHandler(){
 
                       <th
                         scope="col"
-                        className="px-4 py-3.5 text-sm font-normal text-left rtl:text-right text-gray-500 dark:text-gray-400"
+                        className="px-4 py-3.5 text-sm font-normal text-left rtl:text-right  "
                       >
                         PhD students mentoring
                       </th>
@@ -564,7 +567,7 @@ function AllDataHandler(){
 
                       <th
                         scope="col"
-                        className="py-3.5 px-4 text-sm font-normal text-left rtl:text-right text-gray-500 dark:text-gray-400"
+                        className="py-3.5 px-4 text-sm font-normal text-left rtl:text-right  "
                       >
                         <span>Notes</span>
                       </th>
@@ -584,7 +587,7 @@ function AllDataHandler(){
 
                       <th
                         scope="col"
-                        className="px-12 py-3.5 text-sm font-normal text-left rtl:text-right text-gray-500 dark:text-gray-400"
+                        className="px-12 py-3.5 text-sm font-normal text-left rtl:text-right  "
                       >
                         Internal
                       </th>
@@ -593,14 +596,14 @@ function AllDataHandler(){
 
                       <th
                         scope="col"
-                        className="px-4 py-3.5 text-sm font-normal text-left rtl:text-right text-gray-500 dark:text-gray-400"
+                        className="px-4 py-3.5 text-sm font-normal text-left rtl:text-right  "
                       >
                         External
                       </th>
 
                       <th
                         scope="col"
-                        className="px-12 py-3.5 text-sm font-normal text-left rtl:text-right text-gray-500 dark:text-gray-400"
+                        className="px-12 py-3.5 text-sm font-normal text-left rtl:text-right  "
                       >
                         Notes
                       </th>
@@ -625,7 +628,7 @@ function AllDataHandler(){
 
                       {/* { (user==="Chair") &&  <th
                         scope="col"
-                        className="px-4 py-3.5 text-sm font-normal text-left rtl:text-right text-gray-500 dark:text-gray-400"
+                        className="px-4 py-3.5 text-sm font-normal text-left rtl:text-right  "
                       >
                         Assignment
                       </th>} */}
@@ -635,7 +638,7 @@ function AllDataHandler(){
                         user === "Chair" &&
                       <th
                         scope="col"
-                        className="px-4 py-3.5 text-sm font-normal text-left rtl:text-right text-gray-500 dark:text-gray-400"
+                        className="px-4 py-3.5 text-sm font-normal text-left rtl:text-right  "
                       >
                         Actions
                       </th>
@@ -685,47 +688,47 @@ function AllDataHandler(){
 
                             row._id!== editId ?
 
-                            <tr key={row._id} className={row.color === 1 ? 'bg-indigo-900' : (index % 2 === 0 ? 'bg-richblack-900' : 'bg-gray-800')}>
+                            <tr key={row._id} className={row.color === 1 ? 'bg-indigo-500 text-white' : RowColour(colour, index)}>
 
-                         <td className="py-4 px-4 whitespace-nowrap text-gray-500 dark:text-gray-300 sticky-col">
+                         <td className={`py-4 px-4 whitespace-nowrap   ${colour==="dark"? "sticky-col" : "sticky-col-light"}`}>
                          <a className="text-blue-600 underline" href={row.link} target="_blank">{row.name}</a>
                           </td>
 
-                          <td className="px-4 py-4 whitespace-nowrap text-sm text-gray-500 dark:text-gray-300">
+                          <td className="px-4 py-4 whitespace-nowrap text-sm  ">
                               {row.currentRank}
                           </td>
 
-                          <td className="px-4 py-4 whitespace-nowrap text-sm text-gray-500 dark:text-gray-300">
+                          <td className="px-4 py-4 whitespace-nowrap text-sm  ">
                               {row.startingAsu}
                           </td>
 
-                          <td className="px-4 py-4 whitespace-nowrap text-sm text-gray-500 dark:text-gray-300">
+                          <td className="px-4 py-4 whitespace-nowrap text-sm  ">
                               {row.teaching}
                           </td>
 
 
-                          <td className="px-4 py-4 whitespace-nowrap text-sm text-gray-500 dark:text-gray-300">
+                          <td className="px-4 py-4 whitespace-nowrap text-sm  ">
                               {row.research}
                           </td>
 
-                          <td className="px-4 py-4 whitespace-nowrap text-sm text-gray-500 dark:text-gray-300">
+                          <td className="px-4 py-4 whitespace-nowrap text-sm  ">
                               {row.service}
                           </td>
 
 
-                          <td className="px-4 py-4 whitespace-nowrap text-sm text-gray-500 dark:text-gray-300">
+                          <td className="px-4 py-4 whitespace-nowrap text-sm  ">
                               {row.studentEvaluation}
                           </td>
 
-                          <td className="px-4 py-4 whitespace-nowrap text-sm text-gray-500 dark:text-gray-300">
+                          <td className="px-4 py-4 whitespace-nowrap text-sm  ">
                               {row.course}
                           </td>
 
-                          <td className="px-4 py-4 whitespace-nowrap text-sm text-gray-500 dark:text-gray-300">
+                          <td className="px-4 py-4 whitespace-nowrap text-sm  ">
                               {row.teachingStudentMentor}
                           </td>
 
-                          <td className="px-4 py-4  text-sm text-gray-500 dark:text-gray-300">
+                          <td className="px-4 py-4  text-sm  ">
                               <div className="h-16 overflow-hidden hover:h-full">{row.notes}</div>
                           </td>
 
@@ -734,19 +737,19 @@ function AllDataHandler(){
                           </td>
 
                           { reserachCategory && (<>
-                          <td className="px-4 py-4 whitespace-nowrap text-sm text-gray-500 dark:text-gray-300">
+                          <td className="px-4 py-4 whitespace-nowrap text-sm  ">
                               {row.publications}
                           </td>
 
-                          <td className="px-4 py-4 whitespace-nowrap text-sm text-gray-500 dark:text-gray-300">
+                          <td className="px-4 py-4 whitespace-nowrap text-sm  ">
                               {row.researchFunding}
                           </td>
 
-                          <td className="px-4 py-4 whitespace-nowrap text-sm text-gray-500 dark:text-gray-300">
+                          <td className="px-4 py-4 whitespace-nowrap text-sm  ">
                               {row.researchStudentMentor}
                           </td>
 
-                          <td className="px-4 py-4 text-sm text-gray-500 dark:text-gray-300">
+                          <td className="px-4 py-4 text-sm  ">
                           <div className="h-16 overflow-hidden hover:h-full">{row.notes2}</div>
                           </td>
 
@@ -757,15 +760,15 @@ function AllDataHandler(){
 
 
                             {serviceCategory && (<>
-                          <td className="px-4 py-4 whitespace-nowrap text-sm text-gray-500 dark:text-gray-300">
+                          <td className="px-4 py-4 whitespace-nowrap text-sm  ">
                               {row.internal}
                           </td>
 
-                          <td className="px-4 py-4 whitespace-nowrap text-sm text-gray-500 dark:text-gray-300">
+                          <td className="px-4 py-4 whitespace-nowrap text-sm  ">
                               {row.external}
                           </td>
 
-                          <td className="px-4 py-4 overflow-hidden text-sm text-gray-500 dark:text-gray-300">
+                          <td className="px-4 py-4 overflow-hidden text-sm  ">
                             <div className="h-16 overflow-hidden hover:h-full">{row.notes3}</div>
                           </td>
 
@@ -779,7 +782,7 @@ function AllDataHandler(){
                               {row.weightedTotal}
                           </td>
 
-                          {/* { (user==="Chair") && <td className="px-4 py-4 whitespace-nowrap text-sm text-gray-500 dark:text-gray-300">
+                          {/* { (user==="Chair") && <td className="px-4 py-4 whitespace-nowrap text-sm  ">
                               {row.assignment}
                           </td>} */}
 
@@ -787,7 +790,7 @@ function AllDataHandler(){
 
 
                             {/* { user === "Chair" && 
-                            <td className="px-4 py-4 whitespace-nowrap text-sm text-gray-500 dark:text-gray-300 ">
+                            <td className="px-4 py-4 whitespace-nowrap text-sm   ">
                             <div className="flex gap-3">
                                 <button onClick={()=>handleEdit(row._id)}>edit</button>
                                 <button onClick={()=>handleDelete(row._id)}>delete</button> 
@@ -842,9 +845,9 @@ function AllDataHandler(){
 
 
 
-                        <tr key={row._id} className={index % 2 === 0 ? 'bg-richblack-900' :  'bg-gray-800'}>
+                        <tr key={row._id} className={RowColour(colour, index)}>
 
-                        <td className="py-4 px-4 whitespace-nowrap sticky-col">
+                        <td className={`py-4 px-4 whitespace-nowrap   ${colour==="dark"? "sticky-col" : "sticky-col-light"}`}>
                                   <input
                                     type="text"
                                     value={name}
@@ -868,16 +871,16 @@ function AllDataHandler(){
                                   />
                                 </td>
 
-                                <td className="px-4 py-4 whitespace-nowrap text-sm text-gray-500 dark:text-gray-300">
+                                <td className="px-4 py-4 whitespace-nowrap text-sm  ">
                                 {row.teaching}
                             </td>
   
   
-                             <td className="px-4 py-4 whitespace-nowrap text-sm text-gray-500 dark:text-gray-300">
+                             <td className="px-4 py-4 whitespace-nowrap text-sm  ">
                                 {row.research}
                             </td>
   
-                            <td className="px-4 py-4 whitespace-nowrap text-sm text-gray-500 dark:text-gray-300">
+                            <td className="px-4 py-4 whitespace-nowrap text-sm  ">
                                 {row.service}
                             </td>
   
@@ -1077,7 +1080,7 @@ function AllDataHandler(){
                                   </>
                                   }
 
-                                  <td className="px-4 py-4 whitespace-nowrap text-sm text-gray-500 dark:text-gray-300">
+                                  <td className="px-4 py-4 whitespace-nowrap text-sm  ">
                                   {row.weightedTotal}
                               </td>
 
@@ -1089,13 +1092,13 @@ function AllDataHandler(){
                               />
                             </td>} */}
 
-                            { (user==="Chair") && <td className="px-4 py-4 whitespace-nowrap text-sm text-gray-500 dark:text-gray-300">
+                            { (user==="Chair") && <td className="px-4 py-4 whitespace-nowrap text-sm  ">
                               {row.assignment}
                           </td>}
 
 
 
-                             {(user==="Chair") && <td className="px-4 py-4 whitespace-nowrap text-sm text-gray-500 dark:text-gray-300 ">
+                             {(user==="Chair") && <td className="px-4 py-4 whitespace-nowrap text-sm   ">
                                 <div className="flex gap-3">
                                     <button onClick={()=>handleUpdate(row._id)}>Update</button>
                                 </div>

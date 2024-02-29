@@ -4,6 +4,7 @@ import axios from "axios";
 import { useSelector } from "react-redux";
 import profileSlice from "../../Components/reducer/slices/profileSlice";
 import { deletesabbatical_api, sabbatical_api, sabbaticalid_api, updatesabbatical_api } from "../../services/apis";
+import { RowColour } from "../../utils/RowColour";
 
 
 
@@ -13,6 +14,9 @@ const Sabbatical = () => {
   const [data, setData] = useState([]);
   const {user}= useSelector( (state) => state.profile);
   const [editId, setEditId] = useState(-1);
+  
+  const {colour}= useSelector( (state) => state.colour);
+
 
   const [name, setName] = useState("");
   const [startDate, setStartDate] = useState("");
@@ -134,11 +138,11 @@ const Sabbatical = () => {
 
 
 
-                  <thead className="bg-gray-50 dark:bg-gray-800 sticky-thead">
+                  <thead className={`bg-gray-50 dark:bg-gray-800 sticky-thead ${colour==="dark"? "color": "color-light"}`}>
                     <tr>
                       <th
                         scope="col"
-                        className="py-3.5 px-4 text-sm font-normal text-left rtl:text-right text-gray-500 dark:text-gray-400"
+                        className="py-3.5 px-4 text-sm font-normal text-left rtl:text-right  "
                       >
                         <span>Name</span>
                       </th>
@@ -146,7 +150,7 @@ const Sabbatical = () => {
 
                       <th
                         scope="col"
-                        className="px-12 py-3.5 text-sm font-normal text-left rtl:text-right text-gray-500 dark:text-gray-400"
+                        className="px-12 py-3.5 text-sm font-normal text-left rtl:text-right  "
                       >
                         Start Date
                       </th>
@@ -154,7 +158,7 @@ const Sabbatical = () => {
 
                       <th
                         scope="col"
-                        className="px-12 py-3.5 text-sm font-normal text-left rtl:text-right text-gray-500 dark:text-gray-400"
+                        className="px-12 py-3.5 text-sm font-normal text-left rtl:text-right  "
                       >
                         End Date
                       </th>
@@ -162,7 +166,7 @@ const Sabbatical = () => {
 
                       <th
                         scope="col"
-                        className="px-12 py-3.5 text-sm font-normal text-left rtl:text-right text-gray-500 dark:text-gray-400"
+                        className="px-12 py-3.5 text-sm font-normal text-left rtl:text-right  "
                       >
                         Current Rank
                       </th>
@@ -171,7 +175,7 @@ const Sabbatical = () => {
 
                      { user!== "Committee" && <th
                         scope="col"
-                        className="px-12 py-3.5 text-sm font-normal text-left rtl:text-right text-gray-500 dark:text-gray-400"
+                        className="px-12 py-3.5 text-sm font-normal text-left rtl:text-right  "
                       >
                         Actions
                       </th>}
@@ -181,7 +185,7 @@ const Sabbatical = () => {
 {/* 
                       <th
                         scope="col"
-                        className="px-4 py-3.5 text-sm font-normal text-left rtl:text-right text-gray-500 dark:text-gray-400"
+                        className="px-4 py-3.5 text-sm font-normal text-left rtl:text-right  "
                       >
                         Academic Year
                       </th> */}
@@ -198,22 +202,22 @@ const Sabbatical = () => {
 
                       row._id!== editId ?
 
-                      <tr key={row._id} className={index % 2 === 0 ? 'bg-richblack-900' :  'bg-gray-800'}>
+                      <tr key={row._id} className={RowColour(colour, index)}>
 
-                        <td className="py-4 px-4 text-lg text-gray-500 dark:text-gray-300 whitespace-nowrap sticky-col">
+                        <td className={`py-4 px-4 whitespace-nowrap   ${colour==="dark"? "sticky-col" : "sticky-col-light"}`}>
                           {row.name}
                         </td>
 
 
-                        <td className="px-12 py-4 text-gray-500 dark:text-gray-300  whitespace-nowrap">
+                        <td className="px-12 py-4     whitespace-nowrap">
                           {row.startDate}
                         </td>
 
-                        <td className="px-12 py-4 text-gray-500 dark:text-gray-300  whitespace-nowrap">
+                        <td className="px-12 py-4   whitespace-nowrap">
                           {row.endDate}
                         </td>
 
-                        <td className="px-12 py-4 text-gray-500 dark:text-gray-300  whitespace-nowrap">
+                        <td className="px-12 py-4   whitespace-nowrap">
                           {row.currentRank}
                         </td>
 
@@ -223,7 +227,7 @@ const Sabbatical = () => {
                         </td> */}
 
 
-                        { user !== "Committee" && <td className="px-4 py-4 whitespace-nowrap text-sm text-gray-500 dark:text-gray-300 ">
+                        { user !== "Committee" && <td className="px-4 py-4 whitespace-nowrap text-sm  ">
                                 <div className="flex gap-3">
                                     <button onClick={()=>handleEdit(row._id)}>edit</button>
                                     <button onClick={()=>handleDelete(row._id)}>delete</button>
@@ -240,9 +244,9 @@ const Sabbatical = () => {
 
 
 
-                      <tr key={row._id} className={index % 2 === 0 ? 'bg-richblack-900' :  'bg-gray-800'}>
+                      <tr key={row._id} className={RowColour(colour, index)}>
 
-                        <td className="py-4 px-4 whitespace-nowrap sticky-col ">
+                        <td className={`py-4 px-4 whitespace-nowrap   ${colour==="dark"? "sticky-col" : "sticky-col-light"}`}>
                           <input
                             type="text"
                             value={name}
@@ -278,7 +282,7 @@ const Sabbatical = () => {
                                 </select>
                         </td>
 
-                          <td className="px-4 py-4 whitespace-nowrap text-sm text-gray-500 dark:text-gray-300  ">
+                          <td className="px-4 py-4 whitespace-nowrap text-sm   ">
                                 <div className="flex gap-3">
                                     <button onClick={()=>handleUpdate(row._id)}>Update</button>
                                 </div>
