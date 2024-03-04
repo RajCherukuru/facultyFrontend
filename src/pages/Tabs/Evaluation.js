@@ -472,7 +472,7 @@ const Evaluation = () => {
                         scope="col"
                         className="py-3.5  px-4 text-sm font-normal text-left rtl:text-right   "
                       >
-                        <span className="font-extrabold text-yellow-50">Overall</span>
+                        <span className="font-extrabold text-orange-400">Overall</span>
                       </th>
                       </>
                       }
@@ -517,7 +517,7 @@ const Evaluation = () => {
 
                       <th
                         scope="col"
-                        className="px-4 py-3.5 text-sm font-extrabold text-left rtl:text-right text-yellow-50 dark:text-gray-400"
+                        className="px-4 py-3.5 text-sm font-extrabold text-left rtl:text-right text-orange-400 dark:text-gray-400"
                       >
                         Overall
                       </th>
@@ -554,7 +554,7 @@ const Evaluation = () => {
 
                       <th
                         scope="col"
-                        className="px-4 py-3.5 text-sm font-extrabold text-left rtl:text-right text-yellow-50 dark:text-gray-400"
+                        className="px-4 py-3.5 text-sm font-extrabold text-left rtl:text-right text-orange-400 dark:text-gray-400"
                       >
                         Overall
                       </th>
@@ -685,7 +685,7 @@ const Evaluation = () => {
                               <div className="h-16 overflow-hidden hover:h-full">{row.notes}</div>
                           </td>
 
-                          <td className="px-4 py-4 whitespace-nowrap font-extrabold text-sm text-yellow-50 dark:text-gray-300">
+                          <td className="px-4 py-4 whitespace-nowrap font-extrabold text-sm text-orange-400 dark:text-gray-300">
                               {row.overall}
                           </td>
                           </>
@@ -707,7 +707,7 @@ const Evaluation = () => {
                           <div className="h-16 overflow-hidden hover:h-full">{row.notes2}</div>
                           </td>
 
-                          <td className="px-4 py-4 whitespace-nowrap font-extrabold text-sm text-yellow-50 dark:text-gray-300">
+                          <td className="px-4 py-4 whitespace-nowrap font-extrabold text-sm text-orange-400 dark:text-gray-300">
                               {row.overall2}
                           </td>
                           </>)}
@@ -726,7 +726,7 @@ const Evaluation = () => {
                             <div className="h-16 overflow-hidden hover:h-full">{row.notes3}</div>
                           </td>
 
-                          <td className="px-4 py-4 whitespace-nowrap font-extrabold text-sm text-yellow-50 dark:text-gray-300">
+                          <td className="px-4 py-4 whitespace-nowrap font-extrabold text-sm text-orange-400 dark:text-gray-300">
                               {row.overall3}
                           </td>
 
