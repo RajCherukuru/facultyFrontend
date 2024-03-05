@@ -314,7 +314,7 @@ const Assignments = () => {
 
                       <th
                         scope="col"
-                        className="py-3.5 px-4 text-sm font-normal text-left rtl:text-right  "
+                        className="py-3.5 px-4 text-sm font-bold text-left rtl:text-right  "
                       >
                         <span>Name</span>
                       </th>
@@ -322,7 +322,7 @@ const Assignments = () => {
 
                       <th
                         scope="col"
-                        className="px-4 py-3.5 text-sm font-normal text-left rtl:text-right  "
+                        className="px-4 py-3.5 text-sm font-bold text-left rtl:text-right  "
                       >
                         Current Rank
                       </th>
@@ -331,7 +331,7 @@ const Assignments = () => {
 
                       <th
                         scope="col"
-                        className="px-12 py-3.5 text-sm font-normal text-left rtl:text-right  "
+                        className="px-12 py-3.5 text-sm font-bold text-left rtl:text-right  "
                       >
                         Starting ASU
                       </th>
@@ -340,7 +340,7 @@ const Assignments = () => {
 
                       <th
                         scope="col"
-                        className="px-4 py-3.5 text-sm font-normal text-left rtl:text-right  "
+                        className="px-4 py-3.5 text-sm font-bold text-left rtl:text-right  "
                       >
                         Teaching
                       </th>
@@ -348,7 +348,7 @@ const Assignments = () => {
 
                      { reserachCategory && <th
                         scope="col"
-                        className="px-4 py-3.5 text-sm font-normal text-left rtl:text-right  "
+                        className="px-4 py-3.5 text-sm font-bold text-left rtl:text-right  "
                       >
                         Research
                       </th>}
@@ -357,7 +357,7 @@ const Assignments = () => {
 
                      { serviceCategory && <th
                         scope="col"
-                        className="px-4 py-3.5 text-sm font-normal text-left rtl:text-right  "
+                        className="px-4 py-3.5 text-sm font-bold text-left rtl:text-right  "
                       >
                         Service
                       </th>}
@@ -365,7 +365,7 @@ const Assignments = () => {
 
                       {/* <th
                         scope="col"
-                        className="py-3.5 px-4 text-sm font-normal text-left rtl:text-right  "
+                        className="py-3.5 px-4 text-sm font-bold text-left rtl:text-right  "
                       >
                         <span>Student Evaluation</span>
                       </th>
@@ -373,7 +373,7 @@ const Assignments = () => {
 
                       <th
                         scope="col"
-                        className="px-4 py-3.5 text-sm font-normal text-left rtl:text-right  "
+                        className="px-4 py-3.5 text-sm font-bold text-left rtl:text-right  "
                       >
                         Course/program/teaching lab improvement
                       </th>
@@ -382,7 +382,7 @@ const Assignments = () => {
 
                       <th
                         scope="col"
-                        className="px-12 py-3.5 text-sm font-normal text-left rtl:text-right  "
+                        className="px-12 py-3.5 text-sm font-bold text-left rtl:text-right  "
                       >
                         Student mentoring (Except PhD Students)
                       </th>
@@ -391,7 +391,7 @@ const Assignments = () => {
 
                       <th
                         scope="col"
-                        className="px-4 py-3.5 text-sm font-normal text-left rtl:text-right  "
+                        className="px-4 py-3.5 text-sm font-bold text-left rtl:text-right  "
                       >
                         Notes
                       </th>
@@ -400,7 +400,7 @@ const Assignments = () => {
 
                       <th
                         scope="col"
-                        className="py-3.5 px-4 text-sm font-normal text-left rtl:text-right  "
+                        className="py-3.5 px-4 text-sm font-bold text-left rtl:text-right  "
                       >
                         <span>Overall</span>
                       </th>
@@ -411,7 +411,7 @@ const Assignments = () => {
                        reserachCategory && (<>
                       <th
                         scope="col"
-                        className="px-4 py-3.5 text-sm font-normal text-left rtl:text-right  "
+                        className="px-4 py-3.5 text-sm font-bold text-left rtl:text-right  "
                       >
                         Publications/ Other IP
                       </th>
@@ -420,7 +420,7 @@ const Assignments = () => {
 
                       <th
                         scope="col"
-                        className="px-12 py-3.5 text-sm font-normal text-left rtl:text-right  "
+                        className="px-12 py-3.5 text-sm font-bold text-left rtl:text-right  "
                       >
                         Research funding
                       </th>
@@ -429,7 +429,7 @@ const Assignments = () => {
 
                       <th
                         scope="col"
-                        className="px-4 py-3.5 text-sm font-normal text-left rtl:text-right  "
+                        className="px-4 py-3.5 text-sm font-bold text-left rtl:text-right  "
                       >
                         Student mentoring (PhD students)
                       </th>
@@ -437,7 +437,7 @@ const Assignments = () => {
 
                       <th
                         scope="col"
-                        className="py-3.5 px-4 text-sm font-normal text-left rtl:text-right  "
+                        className="py-3.5 px-4 text-sm font-bold text-left rtl:text-right  "
                       >
                         <span>Notes2</span>
                       </th>
@@ -445,7 +445,7 @@ const Assignments = () => {
 
                       <th
                         scope="col"
-                        className="px-4 py-3.5 text-sm font-normal text-left rtl:text-right  "
+                        className="px-4 py-3.5 text-sm font-bold text-left rtl:text-right  "
                       >
                         Overall 2
                       </th>
@@ -457,7 +457,7 @@ const Assignments = () => {
 
                       <th
                         scope="col"
-                        className="px-12 py-3.5 text-sm font-normal text-left rtl:text-right  "
+                        className="px-12 py-3.5 text-sm font-bold text-left rtl:text-right  "
                       >
                         Internal
                       </th>
@@ -466,14 +466,14 @@ const Assignments = () => {
 
                       <th
                         scope="col"
-                        className="px-4 py-3.5 text-sm font-normal text-left rtl:text-right  "
+                        className="px-4 py-3.5 text-sm font-bold text-left rtl:text-right  "
                       >
                         External
                       </th>
 
                       <th
                         scope="col"
-                        className="px-12 py-3.5 text-sm font-normal text-left rtl:text-right  "
+                        className="px-12 py-3.5 text-sm font-bold text-left rtl:text-right  "
                       >
                         Notes3
                       </th>
@@ -482,7 +482,7 @@ const Assignments = () => {
 
                       <th
                         scope="col"
-                        className="px-4 py-3.5 text-sm font-normal text-left rtl:text-right  "
+                        className="px-4 py-3.5 text-sm font-bold text-left rtl:text-right  "
                       >
                         Overall3
                       </th>
@@ -491,14 +491,14 @@ const Assignments = () => {
 
                       <th
                         scope="col"
-                        className="px-4 py-3.5 text-sm font-normal text-left rtl:text-right  "
+                        className="px-4 py-3.5 text-sm font-bold text-left rtl:text-right  "
                       >
                         Weighted Total
                       </th> */}
 
                       <th
                         scope="col"
-                        className="px-4 py-3.5 text-sm font-normal text-left rtl:text-right  "
+                        className="px-4 py-3.5 text-sm font-bold text-left rtl:text-right  "
                       >
                         Assignment
                       </th>
@@ -506,7 +506,7 @@ const Assignments = () => {
 
                       <th
                         scope="col"
-                        className="px-4 py-3.5 text-sm font-normal text-left rtl:text-right  "
+                        className="px-4 py-3.5 text-sm font-bold text-left rtl:text-right  "
                       >
                         Actions
                       </th>

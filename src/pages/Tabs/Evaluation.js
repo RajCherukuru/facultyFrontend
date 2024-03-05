@@ -327,7 +327,7 @@ const Evaluation = () => {
                       <th
                         scope="col"
                         colSpan="6"
-                        className="py-3.5 px-4 text-sm font-normal border-2  text-center rtl:text-right "
+                        className="py-3.5 px-4 text-sm font-bold border-2  text-center rtl:text-right "
                       >
                         <span>Faculty Information</span>
                       </th>
@@ -336,7 +336,7 @@ const Evaluation = () => {
                     { teachingFilter &&  <th
                         scope="col"
                         colSpan="5"
-                        className="px-4 py-3.5 text-sm font-normal border-2  text-center rtl:text-right "
+                        className="px-4 py-3.5 text-sm font-bold border-2  text-center rtl:text-right "
                       >
                         Teaching
                       </th>}
@@ -346,7 +346,7 @@ const Evaluation = () => {
                      reserachCategory && researchFilter &&  <th
                         scope="col"
                         colSpan="5"
-                        className="px-4 py-3.5 text-sm font-normal border-2  text-center rtl:text-right "
+                        className="px-4 py-3.5 text-sm font-bold border-2  text-center rtl:text-right "
                       >
                         Research
                       </th>}
@@ -356,7 +356,7 @@ const Evaluation = () => {
                     {serviceCategory && serviceFilter && <th
                       scope="col"
                       colSpan="4"
-                      className="px-4 py-3.5 text-sm font-normal border-2  text-center rtl:text-right "
+                      className="px-4 py-3.5 text-sm font-bold border-2  text-center rtl:text-right "
                     >
                       Service
                     </th>}
@@ -364,7 +364,7 @@ const Evaluation = () => {
                     <th
                         scope="col"
                         colSpan="2"
-                        className="px-4 py-3.5 text-sm font-normal border-2  text-center rtl:text-right "
+                        className="px-4 py-3.5 text-sm font-bold border-2  text-center rtl:text-right "
                       >
                         Results
                       </th>
@@ -383,7 +383,7 @@ const Evaluation = () => {
 
                       <th
                         scope="col"
-                        className="py-3.5 px-4 text-sm font-normal text-left rtl:text-right   "
+                        className="py-3.5 px-4 text-sm font-bold text-left rtl:text-right   "
                       >
                         <span>Name</span>
                       </th>
@@ -391,7 +391,7 @@ const Evaluation = () => {
 
                       <th
                         scope="col"
-                        className="px-4 py-3.5 text-sm font-normal text-left rtl:text-right   "
+                        className="px-4 py-3.5 text-sm font-bold text-left rtl:text-right   "
                       >
                         Current Rank
                       </th>
@@ -400,7 +400,7 @@ const Evaluation = () => {
 
                       <th
                         scope="col"
-                        className="px-12 py-3.5 text-sm font-normal text-left rtl:text-right   "
+                        className="px-12 py-3.5 text-sm font-bold text-left rtl:text-right   "
                       >
                         Starting ASU
                       </th>
@@ -409,7 +409,7 @@ const Evaluation = () => {
 
                       <th
                         scope="col"
-                        className="px-4 py-3.5 text-sm font-normal text-left rtl:text-right   "
+                        className="px-4 py-3.5 text-sm font-bold text-left rtl:text-right   "
                       >
                         Teaching
                       </th>
@@ -417,7 +417,7 @@ const Evaluation = () => {
 
                      <th
                         scope="col"
-                        className="px-4 py-3.5 text-sm font-normal text-left rtl:text-right   "
+                        className="px-4 py-3.5 text-sm font-bold text-left rtl:text-right   "
                       >
                         Research
                       </th>
@@ -426,7 +426,7 @@ const Evaluation = () => {
 
                      <th
                         scope="col"
-                        className="px-4 py-3.5 text-sm font-normal text-left rtl:text-right   "
+                        className="px-4 py-3.5 text-sm font-bold text-left rtl:text-right   "
                       >
                         Service
                       </th>
@@ -435,7 +435,7 @@ const Evaluation = () => {
                      { teachingFilter && <>
                      <th
                         scope="col"
-                        className="py-3.5 px-4 text-sm font-normal text-left rtl:text-right   "
+                        className="py-3.5 px-4 text-sm font-bold text-left rtl:text-right   "
                       >
                         <span>Student Evaluation</span>
                       </th>
@@ -443,7 +443,7 @@ const Evaluation = () => {
 
                       <th
                         scope="col"
-                        className="px-4 py-3.5 text-sm font-normal text-left rtl:text-right   "
+                        className="px-4 py-3.5 text-sm font-bold text-left rtl:text-right   "
                       >
                         Courses
                       </th>
@@ -452,7 +452,7 @@ const Evaluation = () => {
 
                       <th
                         scope="col"
-                        className="px-12 py-3.5 text-sm font-normal text-left rtl:text-right   "
+                        className="px-12 py-3.5 text-sm font-bold text-left rtl:text-right   "
                       >
                         Students mentoring
                       </th>
@@ -461,7 +461,7 @@ const Evaluation = () => {
 
                       <th
                         scope="col"
-                        className="px-4 py-3.5 text-sm font-normal text-left rtl:text-right   "
+                        className="px-4 py-3.5 text-sm font-bold text-left rtl:text-right   "
                       >
                         Notes
                       </th>
@@ -470,7 +470,7 @@ const Evaluation = () => {
 
                       <th
                         scope="col"
-                        className="py-3.5  px-4 text-sm font-normal text-left rtl:text-right   "
+                        className="py-3.5  px-4 text-sm font-bold text-left rtl:text-right   "
                       >
                         <span className="font-extrabold text-orange-400">Overall</span>
                       </th>
@@ -483,7 +483,7 @@ const Evaluation = () => {
                        reserachCategory && researchFilter && (<>
                       <th
                         scope="col"
-                        className="px-4 py-3.5 text-sm font-normal text-left rtl:text-right   "
+                        className="px-4 py-3.5 text-sm font-bold text-left rtl:text-right   "
                       >
                         Publications/ Other IP
                       </th>
@@ -492,7 +492,7 @@ const Evaluation = () => {
 
                       <th
                         scope="col"
-                        className="px-12 py-3.5 text-sm font-normal text-left rtl:text-right   "
+                        className="px-12 py-3.5 text-sm font-bold text-left rtl:text-right   "
                       >
                         Research funding
                       </th>
@@ -501,7 +501,7 @@ const Evaluation = () => {
 
                       <th
                         scope="col"
-                        className="px-4 py-3.5 text-sm font-normal text-left rtl:text-right   "
+                        className="px-4 py-3.5 text-sm font-bold text-left rtl:text-right   "
                       >
                         PhD students mentoring
                       </th>
@@ -509,7 +509,7 @@ const Evaluation = () => {
 
                       <th
                         scope="col"
-                        className="py-3.5 px-4 text-sm font-normal text-left rtl:text-right   "
+                        className="py-3.5 px-4 text-sm font-bold text-left rtl:text-right   "
                       >
                         <span>Notes</span>
                       </th>
@@ -529,7 +529,7 @@ const Evaluation = () => {
 
                       <th
                         scope="col"
-                        className="px-12 py-3.5 text-sm font-normal text-left rtl:text-right   "
+                        className="px-12 py-3.5 text-sm font-bold text-left rtl:text-right   "
                       >
                         Internal
                       </th>
@@ -538,14 +538,14 @@ const Evaluation = () => {
 
                       <th
                         scope="col"
-                        className="px-4 py-3.5 text-sm font-normal text-left rtl:text-right   "
+                        className="px-4 py-3.5 text-sm font-bold text-left rtl:text-right   "
                       >
                         External
                       </th>
 
                       <th
                         scope="col"
-                        className="px-12 py-3.5 text-sm font-normal text-left rtl:text-right   "
+                        className="px-12 py-3.5 text-sm font-bold text-left rtl:text-right   "
                       >
                         Notes
                       </th>
@@ -573,7 +573,7 @@ const Evaluation = () => {
 
                       {/* <th
                         scope="col"
-                        className="px-4 py-3.5 text-sm font-normal text-left rtl:text-right   "
+                        className="px-4 py-3.5 text-sm font-bold text-left rtl:text-right   "
                       >
                         Assignment
                       </th> */}
@@ -581,7 +581,7 @@ const Evaluation = () => {
 
                       <th
                       scope="col"
-                      className={ `px-4 py-3.5 text-sm font-extrabold text-left rtl:text-right text-orange-400 dark:text-gray-400` }
+                      className={ `px-4 py-3.5 text-sm font-bold text-left rtl:text-right text-orange-400 dark:text-gray-400` }
                       style={{ backgroundColor: 'rgb(34, 34, 34)' }}
 
                     >
@@ -591,7 +591,7 @@ const Evaluation = () => {
 
                       <th
                         scope="col"
-                        className="px-4 py-3.5 text-sm font-normal text-left rtl:text-right   "
+                        className="px-4 py-3.5 text-sm font-bold text-left rtl:text-right   "
                       >
                         Actions
                       </th>
@@ -732,7 +732,7 @@ const Evaluation = () => {
 
                           </>)}
 
-                          <td className="px-4 py-4 whitespace-nowrap font-extrabold text-sm text-orange-400 dark:text-gray-300">
+                          <td className="px-4 py-4 whitespace-nowrap font-extrabold text-sm text-orange-600 dark:text-gray-300">
                               {row.weightedTotal}
                           </td>
 

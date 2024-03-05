@@ -388,7 +388,7 @@ function AllDataHandler(){
                       <th
                         scope="col"
                         colSpan="6"
-                        className="py-3.5 px-4 text-sm font-normal border-2  text-center rtl:text-right  "
+                        className="py-3.5 px-4 text-sm font-bold border-2  text-center rtl:text-right  "
                       >
                         <span>Faculty Information</span>
                       </th>
@@ -397,7 +397,7 @@ function AllDataHandler(){
                       <th
                         scope="col"
                         colSpan="5"
-                        className="px-4 py-3.5 text-sm font-normal border-2  text-center rtl:text-right  "
+                        className="px-4 py-3.5 text-sm font-bold border-2  text-center rtl:text-right  "
                       >
                         Teaching
                       </th>
@@ -407,7 +407,7 @@ function AllDataHandler(){
                      reserachCategory &&  <th
                         scope="col"
                         colSpan="5"
-                        className="px-4 py-3.5 text-sm font-normal border-2  text-center rtl:text-right  "
+                        className="px-4 py-3.5 text-sm font-bold border-2  text-center rtl:text-right  "
                       >
                         Research
                       </th>}
@@ -417,7 +417,7 @@ function AllDataHandler(){
                     {serviceCategory && <th
                       scope="col"
                       colSpan="4"
-                      className="px-4 py-3.5 text-sm font-normal border-2  text-center rtl:text-right  "
+                      className="px-4 py-3.5 text-sm font-bold border-2  text-center rtl:text-right  "
                     >
                       Service
                     </th>}
@@ -425,7 +425,7 @@ function AllDataHandler(){
                     <th
                         scope="col"
                         colSpan={(user === "Chair") ? "3" : "1"}
-                        className="px-4 py-3.5 text-sm font-normal border-2  text-center rtl:text-right  "
+                        className="px-4 py-3.5 text-sm font-bold border-2  text-center rtl:text-right  "
                       >
                         Results
                       </th>
@@ -444,7 +444,7 @@ function AllDataHandler(){
 
                       <th
                         scope="col"
-                        className="py-3.5 px-4 text-sm font-normal text-left rtl:text-right  "
+                        className="py-3.5 px-4 text-sm font-bold text-left rtl:text-right  "
                       >
                         <span>Name</span>
                       </th>
@@ -452,7 +452,7 @@ function AllDataHandler(){
 
                       <th
                         scope="col"
-                        className="px-4 py-3.5 text-sm font-normal text-left rtl:text-right  "
+                        className="px-4 py-3.5 text-sm font-bold text-left rtl:text-right  "
                       >
                         Current Rank
                       </th>
@@ -461,7 +461,7 @@ function AllDataHandler(){
 
                       <th
                         scope="col"
-                        className="px-12 py-3.5 text-sm font-normal text-left rtl:text-right  "
+                        className="px-12 py-3.5 text-sm font-bold text-left rtl:text-right  "
                       >
                         Starting ASU
                       </th>
@@ -470,7 +470,7 @@ function AllDataHandler(){
 
                       <th
                         scope="col"
-                        className="px-4 py-3.5 text-sm font-normal text-left rtl:text-right  "
+                        className="px-4 py-3.5 text-sm font-bold text-left rtl:text-right  "
                       >
                         Teaching
                       </th>
@@ -478,7 +478,7 @@ function AllDataHandler(){
 
                       <th
                         scope="col"
-                        className="px-4 py-3.5 text-sm font-normal text-left rtl:text-right  "
+                        className="px-4 py-3.5 text-sm font-bold text-left rtl:text-right  "
                       >
                         Research
                       </th>
@@ -487,7 +487,7 @@ function AllDataHandler(){
 
                       <th
                         scope="col"
-                        className="px-4 py-3.5 text-sm font-normal text-left rtl:text-right  "
+                        className="px-4 py-3.5 text-sm font-bold text-left rtl:text-right  "
                       >
                         Service
                       </th>
@@ -495,7 +495,7 @@ function AllDataHandler(){
 
                       <th
                         scope="col"
-                        className="py-3.5 px-4 text-sm font-normal text-left rtl:text-right  "
+                        className="py-3.5 px-4 text-sm font-bold text-left rtl:text-right  "
                       >
                         <span>Student Evaluation</span>
                       </th>
@@ -503,7 +503,7 @@ function AllDataHandler(){
 
                       <th
                         scope="col"
-                        className="px-4 py-3.5 text-sm font-normal text-left rtl:text-right  "
+                        className="px-4 py-3.5 text-sm font-bold text-left rtl:text-right  "
                       >
                         Course/program/teaching lab improvement
                       </th>
@@ -512,7 +512,7 @@ function AllDataHandler(){
 
                       <th
                         scope="col"
-                        className="px-12 py-3.5 text-sm font-normal text-left rtl:text-right  "
+                        className="px-12 py-3.5 text-sm font-bold text-left rtl:text-right  "
                       >
                         students mentoring
                       </th>
@@ -521,7 +521,7 @@ function AllDataHandler(){
 
                       <th
                         scope="col"
-                        className="px-4 py-3.5 text-sm font-normal text-left rtl:text-right  "
+                        className="px-4 py-3.5 text-sm font-bold text-left rtl:text-right  "
                       >
                         Notes
                       </th>
@@ -530,7 +530,7 @@ function AllDataHandler(){
 
                       <th
                         scope="col"
-                        className="py-3.5 px-4 text-sm font-normal text-left rtl:text-right  "
+                        className="py-3.5 px-4 text-sm font-bold text-left rtl:text-right  "
                       >
                         <span className="font-extrabold text-orange-400">Overall</span>
                       </th>
@@ -541,7 +541,7 @@ function AllDataHandler(){
                        reserachCategory && (<>
                       <th
                         scope="col"
-                        className="px-4 py-3.5 text-sm font-normal text-left rtl:text-right  "
+                        className="px-4 py-3.5 text-sm font-bold text-left rtl:text-right  "
                       >
                         Publications/ Other IP
                       </th>
@@ -550,7 +550,7 @@ function AllDataHandler(){
 
                       <th
                         scope="col"
-                        className="px-12 py-3.5 text-sm font-normal text-left rtl:text-right  "
+                        className="px-12 py-3.5 text-sm font-bold text-left rtl:text-right  "
                       >
                         Research funding
                       </th>
@@ -559,7 +559,7 @@ function AllDataHandler(){
 
                       <th
                         scope="col"
-                        className="px-4 py-3.5 text-sm font-normal text-left rtl:text-right  "
+                        className="px-4 py-3.5 text-sm font-bold text-left rtl:text-right  "
                       >
                         PhD students mentoring
                       </th>
@@ -567,7 +567,7 @@ function AllDataHandler(){
 
                       <th
                         scope="col"
-                        className="py-3.5 px-4 text-sm font-normal text-left rtl:text-right  "
+                        className="py-3.5 px-4 text-sm font-bold text-left rtl:text-right  "
                       >
                         <span>Notes</span>
                       </th>
@@ -587,7 +587,7 @@ function AllDataHandler(){
 
                       <th
                         scope="col"
-                        className="px-12 py-3.5 text-sm font-normal text-left rtl:text-right  "
+                        className="px-12 py-3.5 text-sm font-bold text-left rtl:text-right  "
                       >
                         Internal
                       </th>
@@ -596,14 +596,14 @@ function AllDataHandler(){
 
                       <th
                         scope="col"
-                        className="px-4 py-3.5 text-sm font-normal text-left rtl:text-right  "
+                        className="px-4 py-3.5 text-sm font-bold text-left rtl:text-right  "
                       >
                         External
                       </th>
 
                       <th
                         scope="col"
-                        className="px-12 py-3.5 text-sm font-normal text-left rtl:text-right  "
+                        className="px-12 py-3.5 text-sm font-bold text-left rtl:text-right  "
                       >
                         Notes
                       </th>
@@ -621,14 +621,14 @@ function AllDataHandler(){
 
                       <th
                       scope="col"
-                      className={`${filterRank === "Teaching Faculty" ? 'weighedTotal ' : ''}px-4 py-3.5 text-sm font-extrabold text-left rtl:text-right text-orange-400 dark:text-gray-400`}
+                      className={`${filterRank === "Teaching Faculty" ? 'weighedTotal ' : ''}px-4 py-3.5 text-sm font-extrabold text-left rtl:text-right text-orange-600 dark:text-gray-400`}
                     >
                       Weighted Total
                     </th>
 
                       {/* { (user==="Chair") &&  <th
                         scope="col"
-                        className="px-4 py-3.5 text-sm font-normal text-left rtl:text-right  "
+                        className="px-4 py-3.5 text-sm font-bold text-left rtl:text-right  "
                       >
                         Assignment
                       </th>} */}
@@ -638,7 +638,7 @@ function AllDataHandler(){
                         user === "Chair" &&
                       <th
                         scope="col"
-                        className="px-4 py-3.5 text-sm font-normal text-left rtl:text-right  "
+                        className="px-4 py-3.5 text-sm font-bold text-left rtl:text-right  "
                       >
                         Actions
                       </th>
@@ -688,7 +688,7 @@ function AllDataHandler(){
 
                             row._id!== editId ?
 
-                            <tr key={row._id} className={row.color === 1 ? 'bg-indigo-500 text-white' : RowColour(colour, index)}>
+                            <tr key={row._id} className={row.color === 1 ? 'bg-indigo-700 text-white' : RowColour(colour, index)}>
 
                          <td className={`py-4 px-4 whitespace-nowrap   ${colour==="dark"? "sticky-col" : "sticky-col-light"}`}>
                          <a className="text-blue-600 underline" href={row.link} target="_blank">{row.name}</a>
@@ -778,7 +778,7 @@ function AllDataHandler(){
 
                           </>)}
 
-                          <td className="px-4 py-4 whitespace-nowrap font-extrabold text-sm text-orange-400 dark:text-gray-300">
+                          <td className="px-4 py-4 whitespace-nowrap font-extrabold text-sm text-orange-600 dark:text-gray-300">
                               {row.weightedTotal}
                           </td>
 

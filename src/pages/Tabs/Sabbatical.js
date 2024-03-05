@@ -142,7 +142,7 @@ const Sabbatical = () => {
                     <tr>
                       <th
                         scope="col"
-                        className="py-3.5 px-4 text-sm font-normal text-left rtl:text-right  "
+                        className="py-3.5 px-4 text-sm font-bold text-left rtl:text-right  "
                       >
                         <span>Name</span>
                       </th>
@@ -150,7 +150,7 @@ const Sabbatical = () => {
 
                       <th
                         scope="col"
-                        className="px-12 py-3.5 text-sm font-normal text-left rtl:text-right  "
+                        className="px-12 py-3.5 text-sm font-bold text-left rtl:text-right  "
                       >
                         Start Date
                       </th>
@@ -158,7 +158,7 @@ const Sabbatical = () => {
 
                       <th
                         scope="col"
-                        className="px-12 py-3.5 text-sm font-normal text-left rtl:text-right  "
+                        className="px-12 py-3.5 text-sm font-bold text-left rtl:text-right  "
                       >
                         End Date
                       </th>
@@ -166,7 +166,7 @@ const Sabbatical = () => {
 
                       <th
                         scope="col"
-                        className="px-12 py-3.5 text-sm font-normal text-left rtl:text-right  "
+                        className="px-12 py-3.5 text-sm font-bold text-left rtl:text-right  "
                       >
                         Current Rank
                       </th>
@@ -175,7 +175,7 @@ const Sabbatical = () => {
 
                      { user!== "Committee" && <th
                         scope="col"
-                        className="px-12 py-3.5 text-sm font-normal text-left rtl:text-right  "
+                        className="px-12 py-3.5 text-sm font-bold text-left rtl:text-right  "
                       >
                         Actions
                       </th>}

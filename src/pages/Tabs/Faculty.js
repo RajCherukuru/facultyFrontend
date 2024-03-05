@@ -209,7 +209,7 @@ const Faculty = () => {
 
                       <th
                         scope="col"
-                        className="py-3.5 px-4 text-lg font-normal text-left rtl:text-right   "
+                        className="py-3.5 px-4 text-lg font-bold text-left rtl:text-right   "
                       >
                         <span>Name</span>
                       </th>
@@ -217,7 +217,7 @@ const Faculty = () => {
 
                       <th
                         scope="col"
-                        className="px-4 py-3.5 text-lg font-normal text-left rtl:text-right   "
+                        className="px-4 py-3.5 text-lg font-bold text-left rtl:text-right   "
                       >
                         Current Rank
                       </th>
@@ -226,7 +226,7 @@ const Faculty = () => {
 
                       <th
                         scope="col"
-                        className="px-12 py-3.5 text-lg font-normal text-left rtl:text-right   "
+                        className="px-12 py-3.5 text-lg font-bold text-left rtl:text-right   "
                       >
                         Starting ASU
                       </th>
@@ -235,7 +235,7 @@ const Faculty = () => {
 
                       <th
                         scope="col"
-                        className="px-4 py-3.5 text-lg font-normal text-left rtl:text-right   "
+                        className="px-4 py-3.5 text-lg font-bold text-left rtl:text-right   "
                       >
                         Teaching
                       </th>
@@ -243,7 +243,7 @@ const Faculty = () => {
 
                       <th
                         scope="col"
-                        className="px-4 py-3.5 text-lg font-normal text-left rtl:text-right   "
+                        className="px-4 py-3.5 text-lg font-bold text-left rtl:text-right   "
                       >
                         Research
                       </th>
@@ -252,7 +252,7 @@ const Faculty = () => {
 
                       <th
                         scope="col"
-                        className="px-4 py-3.5 text-lg font-normal text-left rtl:text-right   ">
+                        className="px-4 py-3.5 text-lg font-bold text-left rtl:text-right   ">
                         Service
                       </th>
 
@@ -260,7 +260,7 @@ const Faculty = () => {
 
                       <th
                         scope="col"
-                        className="px-4 py-3.5 text-lg font-normal text-left rtl:text-right   "
+                        className="px-4 py-3.5 text-lg font-bold text-left rtl:text-right   "
                       >
                         Actions
                       </th>

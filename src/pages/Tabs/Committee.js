@@ -182,34 +182,34 @@ const Committee = () => {
                     <tr>
                       <th
                         scope="col"
-                        className="py-3.5 px-4 text-sm font-normal text-left rtl:text-right "
+                        className="py-3.5 px-4 text-sm font-bold text-left rtl:text-right "
                       >
                         <span>Name</span>
                       </th>
                       <th
                         scope="col"
-                        className="px-12 py-3.5 text-sm font-normal text-left rtl:text-right "
+                        className="px-12 py-3.5 text-sm font-bold text-left rtl:text-right "
                       >
                         Email
                       </th>
 
                       <th
                         scope="col"
-                        className="px-4 py-3.5 text-sm font-normal text-left rtl:text-right "
+                        className="px-4 py-3.5 text-sm font-bold text-left rtl:text-right "
                       >
                         Current Rank
                       </th>
 
                       {/* <th
                         scope="col"
-                        className="px-4 py-3.5 text-sm font-normal text-left rtl:text-right "
+                        className="px-4 py-3.5 text-sm font-bold text-left rtl:text-right "
                       >
                         Academic Year
                       </th> */}
 
                      { user !== "Committee" && <th
                         scope="col"
-                        className="px-4 py-3.5 text-sm font-normal text-left rtl:text-right "
+                        className="px-4 py-3.5 text-sm font-bold text-left rtl:text-right "
                       >
                         Actions
                       </th>}
