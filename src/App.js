@@ -19,7 +19,6 @@ import CreateSabbaticalPage from "./pages/CreatePages/CreateSabbatical";
 import { useSelector } from "react-redux";
 import ForgotPassword from "./pages/ForgotPassword";
 import UpdatePassword from "./pages/UpdatePassword";
-import Admin from "./pages/Tabs/Admin";
 
 
 
@@ -96,8 +95,7 @@ function App() {
         <Route path="/aggregate" element=
         {<PrivateRoute isLoggedIn={isLoggedIn} ><Aggregate></Aggregate></PrivateRoute>} ></Route> 
 
-        <Route path="/admin" element=
-        {<PrivateRoute isLoggedIn={isLoggedIn} ><Admin></Admin></PrivateRoute>} ></Route> 
+       
 
 
       </Routes>

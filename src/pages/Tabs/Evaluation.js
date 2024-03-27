@@ -45,7 +45,6 @@ const Evaluation = () => {
   const [weightedTotal, setWeightedTotal] = useState(0);
   const [assignment, setAssignment] = useState("");
 
-
   const [reserachCategory, setResearchCategory]= useState(true);
   const [serviceCategory, setServiceCategory]= useState(true);
 
@@ -166,6 +165,7 @@ const Evaluation = () => {
         setServiceCategory(true);
       }
       if(d === "Research Faculty"){
+        setTeachingFilter(false);
         setResearchCategory(true);
         setServiceCategory(false);
       }
@@ -281,15 +281,17 @@ const Evaluation = () => {
 
 
         <div className="flex gap-5 mx-auto ">
-        <button onClick={()=>handleCategoryChange("Teaching")} className="rounded-md bg-indigo-600 px-3.5 py-1.5 text-sm font-semibold leading-7 text-white hover:bg-indigo-500 ">
+              {filterRank!=="Research Faculty" && <button onClick={()=>handleCategoryChange("Teaching")} className="rounded-md bg-indigo-600 px-3.5 py-1.5 text-sm font-semibold leading-7 text-white hover:bg-indigo-500 ">
                 Teaching
-              </button>
-              <button onClick={()=>handleCategoryChange("Research")} className="rounded-md bg-indigo-600 px-3.5 py-1.5 text-sm font-semibold leading-7 text-white hover:bg-indigo-500 ">
+              </button>}
+
+              {filterRank!=="Teaching Faculty" && <button onClick={()=>handleCategoryChange("Research")} className="rounded-md bg-indigo-600 px-3.5 py-1.5 text-sm font-semibold leading-7 text-white hover:bg-indigo-500 ">
                 Research
-              </button>
-              <button onClick={()=>handleCategoryChange("Service")} className="rounded-md bg-indigo-600 px-3.5 py-1.5 text-sm font-semibold leading-7 text-white hover:bg-indigo-500 ">
+              </button>}
+
+              {filterRank!=="Research Faculty" && <button onClick={()=>handleCategoryChange("Service")} className="rounded-md bg-indigo-600 px-3.5 py-1.5 text-sm font-semibold leading-7 text-white hover:bg-indigo-500 ">
                 Service
-              </button>
+              </button>}
         </div>
           
           
