@@ -271,7 +271,7 @@ const Sabbatical = () => {
                         </td>
 
                         <td className="py-4 px-4 whitespace-nowrap">
-                        <select onChange={(e) => setCurrentRank(e.target.value)}>
+                        <select className="text-black" onChange={(e) => setCurrentRank(e.target.value)}>
                                   {
                                     professorsWithRanks.map((rank) => (
                                       <option key={rank.id} value={rank.name}>

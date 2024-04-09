@@ -901,7 +901,7 @@ const Assignments = () => {
 
                             <td className="py-4 px-4 whitespace-nowrap">
 
-                            <select onChange={(e) => setAssignment(e.target.value)}>
+                            <select className="text-black" onChange={(e) => setAssignment(e.target.value)}>
                               {
                                 professors.map((prof) => (
                                   <option key={prof.id} value={prof.name}>

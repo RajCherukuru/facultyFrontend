@@ -289,7 +289,7 @@ const Committee = () => {
 
                                 <td className="px-4 py-4 whitespace-nowrap text-sm ">
 
-                                <select onChange={(e)=>setRank(e.target.value)}>
+                                <select className="text-black" onChange={(e)=>setRank(e.target.value)}>
                                   {
                                     professorsWithRanks.map((rank) => (
                                       <option key={rank.id} value={rank.name}>
